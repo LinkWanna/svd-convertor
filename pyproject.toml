@@ -1,7 +1,7 @@
 [project]
 name = "svd-convertor"
 version = "0.1.0"
-description = "Add your description here"
+description = "Convert CMSIS-SVD (.svd/.xml) files to readable JSON"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
