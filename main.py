@@ -2,7 +2,11 @@ import argparse
 import sys
 from pathlib import Path
 
-from src import build_payload, convert_svd_file, dump_split_files
+from src import (
+    build_payload,
+    dump_split_files,
+    generate_split_peripheral_headers,
+)
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
@@ -13,14 +17,9 @@ if str(SRC) not in sys.path:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="svd-convert",
-        description="Convert CMSIS-SVD (.svd/.xml) files to readable JSON.",
+        description="Convert CMSIS-SVD (.svd/.xml) files to split JSON and split header outputs.",
     )
     parser.add_argument("input", help="Path to source .svd/.xml file")
-    parser.add_argument(
-        "-o",
-        "--output",
-        help="Output JSON path (default: same file name with .json)",
-    )
     parser.add_argument(
         "--indent",
         type=int,
@@ -47,9 +46,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Dump grouped peripheral files into this directory",
     )
     parser.add_argument(
-        "--summary-file",
-        default="chip_summary.json",
-        help="Summary file name used with --split-dir (default: chip_summary.json)",
+        "--header-common-include",
+        default="common.h",
+        help='Header include used in generated file (default: "common.h")',
+    )
+    parser.add_argument(
+        "--split-header-dir",
+        help="Generate split peripheral header files into this directory",
+    )
+    parser.add_argument(
+        "--split-header-index",
+        default="peripherals.h",
+        help="Index header file name in split-header mode (default: peripherals.h)",
     )
     return parser
 
@@ -58,62 +66,57 @@ def main():
     args = build_parser().parse_args()
 
     input_path = Path(args.input)
-    output_path = Path(args.output) if args.output else input_path.with_suffix(".json")
+    if not args.split_dir and not args.split_header_dir:
+        raise SystemExit("Please provide at least one output target: --split-dir and/or --split-header-dir")
 
+    payload = build_payload(
+        input_path=input_path,
+        keep_empty=args.keep_empty,
+        sort_peripherals=not args.no_sort,
+    )
+
+    split_result = None
     if args.split_dir:
-        payload = build_payload(
-            input_path=input_path,
-            keep_empty=args.keep_empty,
-            sort_peripherals=not args.no_sort,
-        )
-
         split_result = dump_split_files(
             payload=payload,
             output_dir=Path(args.split_dir),
             indent=args.indent,
             compact=args.compact,
-            summary_file_name=args.summary_file,
+            summary_file_name="chip_summary.json",
         )
 
-        if args.output:
-            convert_svd_file(
-                input_path=input_path,
-                output_path=output_path,
-                indent=args.indent,
-                compact=args.compact,
-                keep_empty=args.keep_empty,
-                sort_peripherals=not args.no_sort,
-            )
-
-        summary = payload.get("summary", {})
-        print(
-            "Dumped grouped JSON files "
-            f"to {split_result['outputDir']} | "
-            f"groupFiles={split_result['groupFileCount']}, "
-            f"summary={split_result['summaryFile']} | "
-            f"peripherals={summary.get('peripheralCount', 0)}, "
-            f"registers={summary.get('registerCount', 0)}, "
-            f"fields={summary.get('fieldCount', 0)}"
+    split_header_info = None
+    if args.split_header_dir:
+        split_header_info = generate_split_peripheral_headers(
+            payload=payload,
+            output_dir=Path(args.split_header_dir),
+            include_header=args.header_common_include,
+            summary_header_name=args.split_header_index,
         )
-        return
-
-    payload = convert_svd_file(
-        input_path=input_path,
-        output_path=output_path,
-        indent=args.indent,
-        compact=args.compact,
-        keep_empty=args.keep_empty,
-        sort_peripherals=not args.no_sort,
-    )
 
     summary = payload.get("summary", {})
-    print(
-        "Converted "
-        f"{input_path} -> {output_path} | "
+    message = "Dumped split outputs"
+    if split_result:
+        message += (
+            " | "
+            f"jsonDir={split_result['outputDir']}, "
+            f"jsonFiles={split_result['groupFileCount']}, "
+            f"summary={split_result['summaryFile']}"
+        )
+    if split_header_info:
+        message += (
+            " | "
+            f"splitHeaders={split_header_info['outputDir']}, "
+            f"files={split_header_info['headerFileCount']}, "
+            f"index={split_header_info['summaryHeader']}"
+        )
+    message += (
+        " | "
         f"peripherals={summary.get('peripheralCount', 0)}, "
         f"registers={summary.get('registerCount', 0)}, "
         f"fields={summary.get('fieldCount', 0)}"
     )
+    print(message)
 
 
 if __name__ == "__main__":

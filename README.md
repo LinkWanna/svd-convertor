@@ -10,17 +10,30 @@ Convert CMSIS-SVD (`.svd` / XML) files into readable JSON with a clear hierarchi
 
 ## Quick Start
 
-Run using `main.py`:
+Dump into many grouped JSON files:
 
 ```bash
-python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd -o out/STM32F103.json
+python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output/json
 ```
 
-Dump into many grouped files (recommended for readability):
+Generate grouped JSON and split headers together:
 
 ```bash
-python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output
+python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output --split-header-dir output/headers
 ```
+
+Generate split peripheral headers (multiple files):
+
+```bash
+python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-header-dir output/headers
+```
+
+This creates files like:
+
+- `output/headers/adc.h`
+- `output/headers/gpio.h`
+- `output/headers/tim.h`
+- `output/headers/peripherals.h` (index header)
 
 This creates files like:
 
@@ -30,34 +43,17 @@ This creates files like:
 - `output/usart.json`
 - `output/chip_summary.json`
 
-You can also keep single full JSON at the same time:
-
-```bash
-python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output -o output/full.json
-```
-
-Or use module mode:
-
-```bash
-python -m svd_convertor.cli cmsis-svd-stm32/stm32f1/STM32F103.svd -o out/STM32F103.json
-```
-
-If installed as a package, use script:
-
-```bash
-svd-convert cmsis-svd-stm32/stm32f1/STM32F103.svd -o out/STM32F103.json
-```
-
 ## CLI Options
 
 - `input`: input `.svd` or `.xml` file
-- `-o, --output`: output `.json` path (default: same file name, `.json` suffix)
 - `--indent N`: pretty indent size (default `2`)
 - `--compact`: compact one-line JSON output
 - `--keep-empty`: keep empty/null fields
 - `--no-sort`: keep original peripheral order (default is sorted by peripheral name)
 - `--split-dir DIR`: dump peripheral-group JSON files to directory `DIR`
-- `--summary-file NAME`: summary file name in split mode (default `chip_summary.json`)
+- `--header-common-include NAME`: include used by generated header (default `common.h`)
+- `--split-header-dir DIR`: generate split header files into `DIR`
+- `--split-header-index NAME`: index header file name in split-header mode (default `peripherals.h`)
 
 ## Output Design
 

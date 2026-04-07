@@ -169,27 +169,3 @@ def dump_split_files(
         "groupFileCount": len(file_summaries),
         "summaryFile": summary_file_name,
     }
-
-
-def convert_svd_file(
-    input_path: str | Path,
-    output_path: str | Path,
-    *,
-    indent: int = 2,
-    compact: bool = False,
-    keep_empty: bool = False,
-    sort_peripherals: bool = True,
-) -> dict[str, Any]:
-    payload = build_payload(
-        input_path=input_path,
-        keep_empty=keep_empty,
-        sort_peripherals=sort_peripherals,
-    )
-
-    output = Path(output_path)
-    output.parent.mkdir(parents=True, exist_ok=True)
-
-    serialized = _serialize_json(payload, indent=indent, compact=compact)
-
-    output.write_text(serialized + "\n", encoding="utf-8")
-    return payload
