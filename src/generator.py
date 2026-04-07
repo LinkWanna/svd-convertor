@@ -195,8 +195,6 @@ def _render_header_content(
         "",
         f'#include "{include_header}"',
         "",
-        f"/* Auto-generated from CMSIS-SVD for {device_name}. */",
-        "",
     ]
 
     defined_structs: set[str] = set()
@@ -263,8 +261,6 @@ def generate_split_peripheral_headers(
     summary_guard = _sanitize_identifier(f"{device_name}_{summary_header_name}", upper=True)
     summary_lines = [
         "#pragma once",
-        "",
-        f"/* Auto-generated split peripheral headers for {device_name}. */",
         "",
     ]
     for file_name in generated_files:
