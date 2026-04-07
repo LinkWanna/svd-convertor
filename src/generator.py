@@ -136,8 +136,10 @@ def _ctype_for_register(register: dict[str, Any]) -> str:
 def _struct_for_peripheral(
     peripheral: dict[str, Any],
     registers: list[dict[str, Any]],
+    *,
+    struct_name: str | None = None,
 ) -> list[str]:
-    struct_name = f"{_sanitize_identifier(str(peripheral.get('name') or 'peripheral'))}_t"
+    resolved_struct_name = struct_name or f"{_sanitize_identifier(str(peripheral.get('name') or 'peripheral'))}_t"
     lines = ["typedef struct {"]
 
     used_names: dict[str, int] = {}
@@ -177,8 +179,22 @@ def _struct_for_peripheral(
 
         cursor = max(cursor, offset + size_bytes)
 
-    lines.append(f"}} {struct_name};")
+    lines.append(f"}} {resolved_struct_name};")
     return lines
+
+
+def _layout_signature(registers: list[dict[str, Any]]) -> tuple[tuple[str, str, str, str], ...]:
+    items: list[tuple[str, str, str, str]] = []
+    for register in sorted(registers, key=lambda r: _hex_to_int(r.get("addressOffset"), 0)):
+        items.append(
+            (
+                str(register.get("addressOffset") or ""),
+                str(register.get("size") or ""),
+                str(register.get("access") or ""),
+                str(register.get("name") or ""),
+            )
+        )
+    return tuple(items)
 
 
 def _render_header_content(
@@ -186,6 +202,7 @@ def _render_header_content(
     device_name: str,
     peripherals: list[dict[str, Any]],
     include_header: str,
+    force_struct_type: str | None = None,
 ) -> tuple[str, int, int]:
     peripherals_sorted = sorted(peripherals, key=lambda p: _hex_to_int(p.get("baseAddress"), 0))
     name_map = {str(item.get("name")): item for item in peripherals if item.get("name")}
@@ -201,6 +218,28 @@ def _render_header_content(
     peripheral_struct_types: dict[str, str] = {}
     macro_lines: list[str] = []
     struct_count = 0
+
+    if force_struct_type:
+        template_peripheral = peripherals_sorted[0] if peripherals_sorted else {"name": "peripheral"}
+        template_registers = _resolve_registers(template_peripheral, name_map)
+        content.extend(
+            _struct_for_peripheral(
+                template_peripheral,
+                template_registers,
+                struct_name=force_struct_type,
+            )
+        )
+        content.append("")
+        struct_count = 1
+
+        for peripheral in peripherals_sorted:
+            name = str(peripheral.get("name") or "PERIPHERAL")
+            macro_name = f"{_sanitize_identifier(name, upper=True)}"
+            base_addr = str(peripheral.get("baseAddress") or "0x0")
+            macro_lines.append(f"#define {macro_name} (({force_struct_type} *){base_addr})")
+
+        content.extend(macro_lines)
+        return "\n".join(content).rstrip() + "\n", struct_count, len(peripherals_sorted)
 
     for peripheral in peripherals_sorted:
         name = str(peripheral.get("name") or "PERIPHERAL")
@@ -249,10 +288,23 @@ def generate_split_peripheral_headers(
     for group_key, group_peripherals in sorted(groups.items()):
         file_name = f"{group_key}.h"
         header_path = out_dir / file_name
+
+        name_map = {str(item.get("name")): item for item in group_peripherals if item.get("name")}
+        signatures: set[tuple[tuple[str, str, str, str], ...]] = set()
+        for peripheral in group_peripherals:
+            registers = _resolve_registers(peripheral, name_map)
+            if registers:
+                signatures.add(_layout_signature(registers))
+
+        force_struct_type = None
+        if len(signatures) == 1 and signatures:
+            force_struct_type = f"{_sanitize_identifier(group_key, upper=True)}_t"
+
         rendered, struct_count, _ = _render_header_content(
             device_name=device_name,
             peripherals=group_peripherals,
             include_header=include_header,
+            force_struct_type=force_struct_type,
         )
         header_path.write_text(rendered, encoding="utf-8")
         generated_files.append(file_name)
