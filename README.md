@@ -16,6 +16,26 @@ Run using `main.py`:
 python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd -o out/STM32F103.json
 ```
 
+Dump into many grouped files (recommended for readability):
+
+```bash
+python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output
+```
+
+This creates files like:
+
+- `output/adc.json` (includes `ADC1`, `ADC2`, `ADC3`)
+- `output/gpio.json`
+- `output/tim.json`
+- `output/usart.json`
+- `output/chip_summary.json`
+
+You can also keep single full JSON at the same time:
+
+```bash
+python main.py cmsis-svd-stm32/stm32f1/STM32F103.svd --split-dir output -o output/full.json
+```
+
 Or use module mode:
 
 ```bash
@@ -36,6 +56,8 @@ svd-convert cmsis-svd-stm32/stm32f1/STM32F103.svd -o out/STM32F103.json
 - `--compact`: compact one-line JSON output
 - `--keep-empty`: keep empty/null fields
 - `--no-sort`: keep original peripheral order (default is sorted by peripheral name)
+- `--split-dir DIR`: dump peripheral-group JSON files to directory `DIR`
+- `--summary-file NAME`: summary file name in split mode (default `chip_summary.json`)
 
 ## Output Design
 

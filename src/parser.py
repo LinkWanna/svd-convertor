@@ -22,8 +22,7 @@ def _parse_enum_values(field_node: ET.Element) -> list[dict[str, Any]]:
         item: dict[str, Any] = {
             "name": _text(enum_value, "name"),
             "description": _text(enum_value, "description"),
-            "value": value,
-            "valueHex": to_hex(value),
+            "value": to_hex(value),
         }
         result.append(item)
 
@@ -40,18 +39,12 @@ def _parse_fields(register_node: ET.Element) -> list[dict[str, Any]]:
         bit_offset = parse_int(_text(field_node, "bitOffset"))
         bit_width = parse_int(_text(field_node, "bitWidth"))
 
-        bit_range = None
-        if bit_offset is not None and bit_width is not None and bit_width > 0:
-            msb = bit_offset + bit_width - 1
-            bit_range = f"[{msb}:{bit_offset}]"
-
         result.append(
             {
                 "name": _text(field_node, "name"),
                 "description": _text(field_node, "description"),
-                "bitOffset": bit_offset,
-                "bitWidth": bit_width,
-                "bitRange": bit_range,
+                "offset": bit_offset,
+                "width": bit_width,
                 "access": _text(field_node, "access"),
                 "enumeratedValues": _parse_enum_values(field_node),
             }
@@ -71,14 +64,11 @@ def _parse_register(register_node: ET.Element, base_address: int) -> dict[str, A
         "name": _text(register_node, "name"),
         "displayName": _text(register_node, "displayName"),
         "description": _text(register_node, "description"),
-        "addressOffset": address_offset,
-        "addressOffsetHex": to_hex(address_offset, width=4),
-        "absoluteAddress": absolute_address,
-        "absoluteAddressHex": to_hex(absolute_address, width=8),
+        "addressOffset": to_hex(address_offset, width=4),
+        "absoluteAddress": to_hex(absolute_address, width=8),
         "size": size,
         "access": _text(register_node, "access"),
-        "resetValue": reset_value,
-        "resetValueHex": to_hex(reset_value),
+        "resetValue": to_hex(reset_value),
         "fields": _parse_fields(register_node),
     }
 
@@ -117,8 +107,7 @@ def _parse_peripheral(peripheral_node: ET.Element) -> dict[str, Any]:
         "description": _text(peripheral_node, "description"),
         "groupName": _text(peripheral_node, "groupName"),
         "derivedFrom": peripheral_node.attrib.get("derivedFrom"),
-        "baseAddress": base_address,
-        "baseAddressHex": to_hex(base_address, width=8),
+        "baseAddress": to_hex(base_address, width=8),
         "interrupts": _parse_interrupts(peripheral_node),
         "registers": _parse_registers(peripheral_node, base_address=base_address),
     }
@@ -154,12 +143,9 @@ def parse_svd(path: str) -> dict[str, Any]:
             "description": _text(root, "description"),
             "addressUnitBits": parse_int(_text(root, "addressUnitBits")),
             "width": parse_int(_text(root, "width")),
-            "size": parse_int(_text(root, "size")),
-            "sizeHex": to_hex(parse_int(_text(root, "size"))),
-            "resetValue": parse_int(_text(root, "resetValue")),
-            "resetValueHex": to_hex(parse_int(_text(root, "resetValue"))),
-            "resetMask": parse_int(_text(root, "resetMask")),
-            "resetMaskHex": to_hex(parse_int(_text(root, "resetMask"))),
+            "size": to_hex(parse_int(_text(root, "size"))),
+            "resetValue": to_hex(parse_int(_text(root, "resetValue"))),
+            "resetMask": to_hex(parse_int(_text(root, "resetMask"))),
             "cpu": cpu,
         },
         "peripherals": peripherals,

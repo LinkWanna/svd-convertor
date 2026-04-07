@@ -1,5 +1,5 @@
 """SVD to JSON converter package."""
 
-from .converter import convert_svd_file
+from .converter import build_payload, convert_svd_file, dump_split_files
 
-__all__ = ["convert_svd_file"]
+__all__ = ["build_payload", "convert_svd_file", "dump_split_files"]
