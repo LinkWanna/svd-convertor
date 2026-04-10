@@ -1,3 +1,6 @@
 [submodule "cmsis-svd-stm32"]
 	path = cmsis-svd-stm32
 	url = https://github.com/modm-io/cmsis-svd-stm32.git
+[submodule "ch32-rs"]
+	path = ch32-rs
+	url = https://github.com/ch32-rs/ch32-rs.git
