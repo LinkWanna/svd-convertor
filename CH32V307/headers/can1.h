@@ -1,0 +1,75 @@
+#pragma once
+
+#include "types.h"
+
+typedef struct {
+    io_rw_32 CTLR;
+    io_rw_32 STATR;
+    io_rw_32 TSTATR;
+    io_rw_32 RFIFO[2];
+    io_rw_32 INTENR;
+    io_rw_32 ERRSR;
+    io_rw_32 BTIMR;
+    uint8_t _reserved_0[0x160];
+    io_rw_32 TXMIR0;
+    io_rw_32 TXMDTR0;
+    io_rw_32 TXMDLR0;
+    io_rw_32 TXMDHR0;
+    io_rw_32 TXMIR1;
+    io_rw_32 TXMDTR1;
+    io_rw_32 TXMDLR1;
+    io_rw_32 TXMDHR1;
+    io_rw_32 TXMIR2;
+    io_rw_32 TXMDTR2;
+    io_rw_32 TXMDLR2;
+    io_rw_32 TXMDHR2;
+    io_ro_32 RXMIR0;
+    io_ro_32 RXMDTR0;
+    io_ro_32 RXMDLR0;
+    io_ro_32 RXMDHR0;
+    io_ro_32 RXMIR1;
+    io_ro_32 RXMDTR1;
+    io_ro_32 RXMDLR1;
+    io_ro_32 RXMDHR1;
+    uint8_t _reserved_1[0x30];
+    io_rw_32 FCTLR;
+    io_rw_32 FMCFGR;
+    uint8_t _reserved_2[0x4];
+    io_rw_32 FSCFGR;
+    uint8_t _reserved_3[0x4];
+    io_rw_32 FAFIFOR;
+    uint8_t _reserved_4[0x4];
+    io_rw_32 FWR;
+    uint8_t _reserved_5[0x20];
+    io_rw_32 F0R[2];
+    io_rw_32 F1R[2];
+    io_rw_32 F2R[2];
+    io_rw_32 F3R[2];
+    io_rw_32 F4R[2];
+    io_rw_32 F5R[2];
+    io_rw_32 F6R[2];
+    io_rw_32 F7R[2];
+    io_rw_32 F8R[2];
+    io_rw_32 F9R[2];
+    io_rw_32 F10R[2];
+    io_rw_32 F11R[2];
+    io_rw_32 F12R[2];
+    io_rw_32 F13R[2];
+    io_rw_32 F14R[2];
+    io_rw_32 F15R[2];
+    io_rw_32 F16R[2];
+    io_rw_32 F17R[2];
+    io_rw_32 F18R[2];
+    io_rw_32 F19R[2];
+    io_rw_32 F20R[2];
+    io_rw_32 F21R[2];
+    io_rw_32 F22R[2];
+    io_rw_32 F23R[2];
+    io_rw_32 F24R[2];
+    io_rw_32 F25R[2];
+    io_rw_32 F26R[2];
+    io_rw_32 F27R[2];
+} CAN1_t;
+
+#define CAN1 ((CAN1_t *)0x40006400)
+#define CAN2 ((CAN1_t *)0x40006800)

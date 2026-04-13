@@ -1,0 +1,1851 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "ethernet",
+  "summary": {
+    "peripheralCount": 4,
+    "registerCount": 53,
+    "fieldCount": 190
+  },
+  "peripherals": [
+    {
+      "name": "ETHERNET_DMA",
+      "description": "Ethernet: DMA controller operation",
+      "groupName": "ETHERNET",
+      "baseAddress": "0x40029000",
+      "registers": [
+        {
+          "name": "DMABMR",
+          "displayName": "DMABMR",
+          "description": "Ethernet DMA bus mode register",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40029000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x2101",
+          "fields": [
+            {
+              "name": "SR",
+              "description": "Software reset",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DA",
+              "description": "DMA Arbitration",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "DSL",
+              "description": "Descriptor skip length",
+              "offset": 2,
+              "width": 5
+            },
+            {
+              "name": "PBL",
+              "description": "Programmable burst length",
+              "offset": 8,
+              "width": 6
+            },
+            {
+              "name": "RTPR",
+              "description": "Rx Tx priority ratio",
+              "offset": 14,
+              "width": 2
+            },
+            {
+              "name": "FB",
+              "description": "Fixed burst",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "RDP",
+              "description": "Rx DMA PBL",
+              "offset": 17,
+              "width": 6
+            },
+            {
+              "name": "USP",
+              "description": "Use separate PBL",
+              "offset": 23,
+              "width": 1
+            },
+            {
+              "name": "FPM",
+              "description": "4xPBL mode",
+              "offset": 24,
+              "width": 1
+            },
+            {
+              "name": "AAB",
+              "description": "Address-aligned beats",
+              "offset": 25,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "DMATPDR",
+          "displayName": "DMATPDR",
+          "description": "Ethernet DMA transmit poll demand register",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40029004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TPD",
+              "description": "Transmit poll demand",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMARPDR",
+          "displayName": "DMARPDR",
+          "description": "EHERNET DMA receive poll demand register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40029008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RPD",
+              "description": "Receive poll demand",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMARDLAR",
+          "displayName": "DMARDLAR",
+          "description": "Ethernet DMA receive descriptor list address register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4002900C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SRL",
+              "description": "Start of receive list",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMATDLAR",
+          "displayName": "DMATDLAR",
+          "description": "Ethernet DMA transmit descriptor list address register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40029010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STL",
+              "description": "Start of transmit list",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMASR",
+          "displayName": "DMASR",
+          "description": "Ethernet DMA status register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40029014",
+          "size": 32,
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TS",
+              "description": "Transmit status",
+              "offset": 0,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "TPSS",
+              "description": "Transmit process stopped status",
+              "offset": 1,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "TBUS",
+              "description": "Transmit buffer unavailable status",
+              "offset": 2,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "TJTS",
+              "description": "Transmit jabber timeout status",
+              "offset": 3,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "ROS",
+              "description": "Receive overflow status",
+              "offset": 4,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "TUS",
+              "description": "Transmit underflow status",
+              "offset": 5,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "RS",
+              "description": "Receive status",
+              "offset": 6,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "RBUS",
+              "description": "Receive buffer unavailable status",
+              "offset": 7,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "RPSS",
+              "description": "Receive process stopped status",
+              "offset": 8,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "PWTS",
+              "description": "Receive watchdog timeout status",
+              "offset": 9,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "ETS",
+              "description": "Early transmit status",
+              "offset": 10,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "FBES",
+              "description": "Fatal bus error status",
+              "offset": 13,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "ERS",
+              "description": "Early receive status",
+              "offset": 14,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "AIS",
+              "description": "Abnormal interrupt summary",
+              "offset": 15,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "NIS",
+              "description": "Normal interrupt summary",
+              "offset": 16,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "RPS",
+              "description": "Receive process state",
+              "offset": 17,
+              "width": 3,
+              "access": "read-only"
+            },
+            {
+              "name": "TPS",
+              "description": "Transmit process state",
+              "offset": 20,
+              "width": 3,
+              "access": "read-only"
+            },
+            {
+              "name": "EBS",
+              "description": "Error bits status",
+              "offset": 23,
+              "width": 3,
+              "access": "read-only"
+            },
+            {
+              "name": "MMCS",
+              "description": "MMC status",
+              "offset": 27,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "PMTS",
+              "description": "PMT status",
+              "offset": 28,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "TSTS",
+              "description": "Time stamp trigger status",
+              "offset": 29,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "IPLS",
+              "description": "10MPHY Physical layer variation",
+              "offset": 31,
+              "width": 1,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "DMAOMR",
+          "displayName": "DMAOMR",
+          "description": "Ethernet DMA operation mode register",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40029018",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SR",
+              "description": "SR",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "OSF",
+              "description": "OSF",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "RTC",
+              "description": "RTC",
+              "offset": 3,
+              "width": 2
+            },
+            {
+              "name": "FUGF",
+              "description": "FUGF",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "FEF",
+              "description": "FEF",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "ST",
+              "description": "ST",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "TTC",
+              "description": "TTC",
+              "offset": 14,
+              "width": 3
+            },
+            {
+              "name": "FTF",
+              "description": "FTF",
+              "offset": 20,
+              "width": 1
+            },
+            {
+              "name": "TSF",
+              "description": "TSF",
+              "offset": 21,
+              "width": 1
+            },
+            {
+              "name": "DFRF",
+              "description": "DFRF",
+              "offset": 24,
+              "width": 1
+            },
+            {
+              "name": "RSF",
+              "description": "RSF",
+              "offset": 25,
+              "width": 1
+            },
+            {
+              "name": "DTCEFD",
+              "description": "DTCEFD",
+              "offset": 26,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "DMAIER",
+          "displayName": "DMAIER",
+          "description": "Ethernet DMA interrupt enable register",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4002901C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TIE",
+              "description": "Transmit interrupt enable",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "TPSIE",
+              "description": "Transmit process stopped interrupt enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "TBUIE",
+              "description": "Transmit buffer unavailable interrupt enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TJTIE",
+              "description": "Transmit jabber timeout interrupt enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "ROIE",
+              "description": "Overflow interrupt enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "TUIE",
+              "description": "Underflow interrupt enable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "RIE",
+              "description": "Receive interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "RBUIE",
+              "description": "Receive buffer unavailable interrupt enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "RPSIE",
+              "description": "Receive process stopped interrupt enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "RWTIE",
+              "description": "receive watchdog timeout interrupt enable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "ETIE",
+              "description": "Early transmit interrupt enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "FBEIE",
+              "description": "Fatal bus error interrupt enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "ERIE",
+              "description": "Early receive interrupt enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "AISE",
+              "description": "Abnormal interrupt summary enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "NISE",
+              "description": "Normal interrupt summary enable",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "IPLE",
+              "description": "10M Physical layer connection",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "DMAMFBOCR",
+          "displayName": "DMAMFBOCR",
+          "description": "Ethernet DMA missed frame and buffer overflow counter register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40029020",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "MFC",
+              "description": "Missed frames by the controller",
+              "offset": 0,
+              "width": 16
+            },
+            {
+              "name": "OMFC",
+              "description": "Overflow bit for missed frame counter",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "MFA",
+              "description": "Missed frames by the application",
+              "offset": 17,
+              "width": 11
+            },
+            {
+              "name": "OFOC",
+              "description": "Overflow bit for FIFO overflow counter",
+              "offset": 28,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "DMACHTDR",
+          "displayName": "DMACHTDR",
+          "description": "Ethernet DMA current host transmit descriptor register",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40029048",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HTDAP",
+              "description": "Host transmit descriptor address pointer",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMACHRDR",
+          "displayName": "DMACHRDR",
+          "description": "Ethernet DMA current host receive descriptor register",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x4002904C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HRDAP",
+              "description": "Host receive descriptor address pointer",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMACHTBAR",
+          "displayName": "DMACHTBAR",
+          "description": "Ethernet DMA current host transmit buffer address register",
+          "addressOffset": "0x0050",
+          "absoluteAddress": "0x40029050",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HTBAP",
+              "description": "Host transmit buffer address pointer",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DMACHRBAR",
+          "displayName": "DMACHRBAR",
+          "description": "Ethernet DMA current host receive buffer address register",
+          "addressOffset": "0x0054",
+          "absoluteAddress": "0x40029054",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HRBAP",
+              "description": "Host receive buffer address pointer",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ETHERNET_MAC",
+      "description": "Ethernet: media access control",
+      "groupName": "ETHERNET",
+      "baseAddress": "0x40028000",
+      "interrupts": [
+        {
+          "name": "ETH",
+          "description": "Ethernet global interrupt",
+          "value": 77
+        },
+        {
+          "name": "ETH_WKUP",
+          "description": "Ethernet Wakeup through EXTI line interrupt",
+          "value": 78
+        }
+      ],
+      "registers": [
+        {
+          "name": "MACCR",
+          "displayName": "MACCR",
+          "description": "Ethernet MAC configuration register (ETH_MACCR)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40028000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x8000",
+          "fields": [
+            {
+              "name": "TCES",
+              "description": "Send clock selection bit",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "TCF",
+              "description": "Send clock reversal",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "RE",
+              "description": "Receiver enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TE",
+              "description": "Transmitter enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "DC",
+              "description": "Deferral check",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "BL",
+              "description": "Back-off limit",
+              "offset": 5,
+              "width": 2
+            },
+            {
+              "name": "APCS",
+              "description": "Automatic pad/CRC stripping",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "RD",
+              "description": "Retry disable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "IPCO",
+              "description": "IPv4 checksum offload",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "DM",
+              "description": "Duplex mode",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "LM",
+              "description": "Loopback mode",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "ROD",
+              "description": "Receive own disable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "FES",
+              "description": "Fast Ethernet speed",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "CSD",
+              "description": "Carrier sense disable",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "IFG",
+              "description": "Interframe gap",
+              "offset": 17,
+              "width": 3
+            },
+            {
+              "name": "IRE",
+              "description": "10MPHY 50Ω set",
+              "offset": 20,
+              "width": 1
+            },
+            {
+              "name": "PDI",
+              "description": "10MPHY TX DRIVER bisa current",
+              "offset": 21,
+              "width": 1
+            },
+            {
+              "name": "JD",
+              "description": "Jabber disable",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "WD",
+              "description": "Watchdog disable",
+              "offset": 23,
+              "width": 1
+            },
+            {
+              "name": "TCD",
+              "description": "SEND clock delay",
+              "offset": 29,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "MACFFR",
+          "displayName": "MACFFR",
+          "description": "Ethernet MAC frame filter register (ETH_MACCFFR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40028004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PM",
+              "description": "Promiscuous mode",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "HU",
+              "description": "Hash unicast",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "HM",
+              "description": "Hash multicast",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DAIF",
+              "description": "Destination address inverse filtering",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "PAM",
+              "description": "Pass all multicast",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "BFD",
+              "description": "Broadcast frames disable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "PCF",
+              "description": "Pass control frames",
+              "offset": 6,
+              "width": 2
+            },
+            {
+              "name": "SAIF",
+              "description": "Source address inverse filtering",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "SAF",
+              "description": "Source address filter",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "HPF",
+              "description": "Hash or perfect filter",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "RA",
+              "description": "Receive all",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACHTHR",
+          "displayName": "MACHTHR",
+          "description": "Ethernet MAC hash table high register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40028008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HTH",
+              "description": "Hash table high",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MACHTLR",
+          "displayName": "MACHTLR",
+          "description": "Ethernet MAC hash table low register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4002800C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HTL",
+              "description": "Hash table low",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MACMIIAR",
+          "displayName": "MACMIIAR",
+          "description": "Ethernet MAC MII address register (ETH_MACMIIAR)",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40028010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "MB",
+              "description": "MII busy",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "MW",
+              "description": "MII write",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CR",
+              "description": "Clock range",
+              "offset": 2,
+              "width": 3
+            },
+            {
+              "name": "MR",
+              "description": "MII register",
+              "offset": 6,
+              "width": 5
+            },
+            {
+              "name": "PA",
+              "description": "PHY address",
+              "offset": 11,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "MACMIIDR",
+          "displayName": "MACMIIDR",
+          "description": "Ethernet MAC MII data register (ETH_MACMIIDR)",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40028014",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "MD",
+              "description": "MII data",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "MACFCR",
+          "displayName": "MACFCR",
+          "description": "Ethernet MAC flow control register (ETH_MACFCR)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40028018",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "FCB_BPA",
+              "description": "Flow control busy/back pressure activate",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "TFCE",
+              "description": "Transmit flow control enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "RFCE",
+              "description": "Receive flow control enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "UPFD",
+              "description": "Unicast pause frame detect",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "PLT",
+              "description": "Pause low threshold",
+              "offset": 4,
+              "width": 2
+            },
+            {
+              "name": "ZQPD",
+              "description": "Zero-quanta pause disable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "PT",
+              "description": "Pass control frames",
+              "offset": 16,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "MACVLANTR",
+          "displayName": "MACVLANTR",
+          "description": "Ethernet MAC VLAN tag register (ETH_MACVLANTR)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4002801C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VLANTI",
+              "description": "VLAN tag identifier (for receive frames)",
+              "offset": 0,
+              "width": 16
+            },
+            {
+              "name": "VLANTC",
+              "description": "12-bit VLAN tag comparison",
+              "offset": 16,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACRWUFFR",
+          "displayName": "MACRWUFFR",
+          "description": "Ethernet MAC remote wakeup frame filter register (ETH_MACRWUFFR)",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40028028",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "MACPMTCSR",
+          "displayName": "MACPMTCSR",
+          "description": "Ethernet MAC PMT control and status register (ETH_MACPMTCSR)",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4002802C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PD",
+              "description": "Power down",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "MPE",
+              "description": "Magic Packet enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "WFE",
+              "description": "Wakeup frame enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "MPR",
+              "description": "Magic packet received",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "WFR",
+              "description": "Wakeup frame received",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "GU",
+              "description": "Global unicast",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "WFFRPR",
+              "description": "Wakeup frame filter register pointer reset",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACSR",
+          "displayName": "MACSR",
+          "description": "Ethernet MAC interrupt status register (ETH_MACSR)",
+          "addressOffset": "0x0038",
+          "absoluteAddress": "0x40028038",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PMTS",
+              "description": "PMT status",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "MMCS",
+              "description": "MMC status",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "MMCRS",
+              "description": "MMC receive status",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "MMCTS",
+              "description": "MMC transmit status",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "TSTS",
+              "description": "Time stamp trigger status",
+              "offset": 9,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACIMR",
+          "displayName": "MACIMR",
+          "description": "Ethernet MAC interrupt mask register (ETH_MACIMR)",
+          "addressOffset": "0x003C",
+          "absoluteAddress": "0x4002803C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PMTIM",
+              "description": "PMT interrupt mask",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "TSTIM",
+              "description": "Time stamp trigger interrupt mask",
+              "offset": 9,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACA0HR",
+          "displayName": "MACA0HR",
+          "description": "Ethernet MAC address 0 high register (ETH_MACA0HR)",
+          "addressOffset": "0x0040",
+          "absoluteAddress": "0x40028040",
+          "size": 32,
+          "resetValue": "0x10FFFF",
+          "fields": [
+            {
+              "name": "MACA0H",
+              "description": "MAC address0 high",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            },
+            {
+              "name": "MO",
+              "description": "Always 1",
+              "offset": 31,
+              "width": 1,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "MACA0LR",
+          "displayName": "MACA0LR",
+          "description": "Ethernet MAC address 0 low register",
+          "addressOffset": "0x0044",
+          "absoluteAddress": "0x40028044",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFFFFFF",
+          "fields": [
+            {
+              "name": "MACA0L",
+              "description": "MAC address0 low",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MACA1HR",
+          "displayName": "MACA1HR",
+          "description": "Ethernet MAC address 1 high register (ETH_MACA1HR)",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40028048",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFF",
+          "fields": [
+            {
+              "name": "MACA1H",
+              "description": "MAC address1 high",
+              "offset": 0,
+              "width": 16
+            },
+            {
+              "name": "MBC",
+              "description": "Mask byte control",
+              "offset": 24,
+              "width": 6
+            },
+            {
+              "name": "SA",
+              "description": "Source address",
+              "offset": 30,
+              "width": 1
+            },
+            {
+              "name": "AE",
+              "description": "Address enable",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACA1LR",
+          "displayName": "MACA1LR",
+          "description": "Ethernet MAC address1 low register",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x4002804C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFFFFFF",
+          "fields": [
+            {
+              "name": "MACA1L",
+              "description": "MAC address1 low",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MACA2HR",
+          "displayName": "MACA2HR",
+          "description": "Ethernet MAC address 2 high register (ETH_MACA2HR)",
+          "addressOffset": "0x0050",
+          "absoluteAddress": "0x40028050",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFF",
+          "fields": [
+            {
+              "name": "ETH_MACA2HR",
+              "description": "Ethernet MAC address 2 high register",
+              "offset": 0,
+              "width": 16
+            },
+            {
+              "name": "MBC",
+              "description": "Mask byte control",
+              "offset": 24,
+              "width": 6
+            },
+            {
+              "name": "SA",
+              "description": "Source address",
+              "offset": 30,
+              "width": 1
+            },
+            {
+              "name": "AE",
+              "description": "Address enable",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACA2LR",
+          "displayName": "MACA2LR",
+          "description": "Ethernet MAC address 2 low register",
+          "addressOffset": "0x0054",
+          "absoluteAddress": "0x40028054",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFFFFFF",
+          "fields": [
+            {
+              "name": "MACA2L",
+              "description": "MAC address2 low",
+              "offset": 0,
+              "width": 31
+            }
+          ]
+        },
+        {
+          "name": "MACA3HR",
+          "displayName": "MACA3HR",
+          "description": "Ethernet MAC address 3 high register (ETH_MACA3HR)",
+          "addressOffset": "0x0058",
+          "absoluteAddress": "0x40028058",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFF",
+          "fields": [
+            {
+              "name": "MACA3H",
+              "description": "MAC address3 high",
+              "offset": 0,
+              "width": 16
+            },
+            {
+              "name": "MBC",
+              "description": "Mask byte control",
+              "offset": 24,
+              "width": 6
+            },
+            {
+              "name": "SA",
+              "description": "Source address",
+              "offset": 30,
+              "width": 1
+            },
+            {
+              "name": "AE",
+              "description": "Address enable",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MACA3LR",
+          "displayName": "MACA3LR",
+          "description": "Ethernet MAC address 3 low register",
+          "addressOffset": "0x005C",
+          "absoluteAddress": "0x4002805C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFFFFFF",
+          "fields": [
+            {
+              "name": "MBCA3L",
+              "description": "MAC address3 low",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ETHERNET_MMC",
+      "description": "Ethernet: MAC management counters",
+      "groupName": "ETHERNET",
+      "baseAddress": "0x40028100",
+      "registers": [
+        {
+          "name": "MMCCR",
+          "displayName": "MMCCR",
+          "description": "Ethernet MMC control register (ETH_MMCCR)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40028100",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CR",
+              "description": "Counter reset",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "CSR",
+              "description": "Counter stop rollover",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "ROR",
+              "description": "Reset on read",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "MCF",
+              "description": "MMC counter freeze",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MMCRIR",
+          "displayName": "MMCRIR",
+          "description": "Ethernet MMC receive interrupt register (ETH_MMCRIR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40028104",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RFCES",
+              "description": "Received frames CRC error status",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "RFAES",
+              "description": "Received frames alignment error status",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "RGUFS",
+              "description": "Received Good Unicast Frames Status",
+              "offset": 17,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MMCTIR",
+          "displayName": "MMCTIR",
+          "description": "Ethernet MMC transmit interrupt register (ETH_MMCTIR)",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40028108",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TGFSCS",
+              "description": "Transmitted good frames single collision status",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "TGFMSCS",
+              "description": "Transmitted good frames more single collision status",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "TGFS",
+              "description": "Transmitted good frames status",
+              "offset": 21,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MMCRIMR",
+          "displayName": "MMCRIMR",
+          "description": "Ethernet MMC receive interrupt mask register (ETH_MMCRIMR)",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4002810C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RFCEM",
+              "description": "Received frame CRC error mask",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "RFAEM",
+              "description": "Received frames alignment error mask",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "RGUFM",
+              "description": "Received good unicast frames mask",
+              "offset": 17,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MMCTIMR",
+          "displayName": "MMCTIMR",
+          "description": "Ethernet MMC transmit interrupt mask register (ETH_MMCTIMR)",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40028110",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TGFSCM",
+              "description": "Transmitted good frames single collision mask",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "TGFMSCM",
+              "description": "Transmitted good frames more single collision mask",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "TGFM",
+              "description": "Transmitted good frames mask",
+              "offset": 21,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MMCTGFSCCR",
+          "displayName": "MMCTGFSCCR",
+          "description": "Ethernet MMC transmitted good frames after a single collision counter",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x4002814C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TGFSCC",
+              "description": "Transmitted good frames after a single collision counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MMCTGFMSCCR",
+          "displayName": "MMCTGFMSCCR",
+          "description": "Ethernet MMC transmitted good frames after more than a single collision",
+          "addressOffset": "0x0050",
+          "absoluteAddress": "0x40028150",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TGFMSCC",
+              "description": "Transmitted good frames after more than a single collision counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MMCTGFCR",
+          "displayName": "MMCTGFCR",
+          "description": "Ethernet MMC transmitted good frames counter register",
+          "addressOffset": "0x0068",
+          "absoluteAddress": "0x40028168",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TGFC",
+              "description": "Transmitted good frames counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MMCRFCECR",
+          "displayName": "MMCRFCECR",
+          "description": "Ethernet MMC received frames with CRC error counter register",
+          "addressOffset": "0x0094",
+          "absoluteAddress": "0x40028194",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RFCFC",
+              "description": "Received frames with CRC error counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MMCRFAECR",
+          "displayName": "MMCRFAECR",
+          "description": "Ethernet MMC received frames with alignment error counter register",
+          "addressOffset": "0x0098",
+          "absoluteAddress": "0x40028198",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RFAEC",
+              "description": "Received frames with alignment error counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "MMCRGUFCR",
+          "displayName": "MMCRGUFCR",
+          "description": "MMC received good unicast frames counter register",
+          "addressOffset": "0x00C4",
+          "absoluteAddress": "0x400281C4",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RGUFC",
+              "description": "Received good unicast frames counter",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ETHERNET_PTP",
+      "description": "Ethernet: Precision time protocol",
+      "groupName": "ETHERNET",
+      "baseAddress": "0x40028700",
+      "registers": [
+        {
+          "name": "PTPTSCR",
+          "displayName": "PTPTSCR",
+          "description": "Ethernet PTP time stamp control register (ETH_PTPTSCR)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40028700",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TSE",
+              "description": "Time stamp enable",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "TSFCU",
+              "description": "Time stamp fine or coarse update",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "TSSTI",
+              "description": "Time stamp system time initialize",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TSSTU",
+              "description": "Time stamp system time update",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "TSITE",
+              "description": "Time stamp interrupt trigger enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "TSARU",
+              "description": "Time stamp addend register update",
+              "offset": 5,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "PTPSSIR",
+          "displayName": "PTPSSIR",
+          "description": "Ethernet PTP subsecond increment register",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40028704",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STSSI",
+              "description": "System time subsecond increment",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "PTPTSHR",
+          "displayName": "PTPTSHR",
+          "description": "Ethernet PTP time stamp high register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40028708",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STS",
+              "description": "System time second",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "PTPTSLR",
+          "displayName": "PTPTSLR",
+          "description": "Ethernet PTP time stamp low register (ETH_PTPTSLR)",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4002870C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STSS",
+              "description": "System time subseconds",
+              "offset": 0,
+              "width": 31
+            },
+            {
+              "name": "STPNS",
+              "description": "System time positive or negative sign",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "PTPTSHUR",
+          "displayName": "PTPTSHUR",
+          "description": "Ethernet PTP time stamp high update register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40028710",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TSUS",
+              "description": "Time stamp update second",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "PTPTSLUR",
+          "displayName": "PTPTSLUR",
+          "description": "Ethernet PTP time stamp low update register (ETH_PTPTSLUR)",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40028714",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TSUSS",
+              "description": "Time stamp update subseconds",
+              "offset": 0,
+              "width": 31
+            },
+            {
+              "name": "TSUPNS",
+              "description": "Time stamp update positive or negative sign",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "PTPTSAR",
+          "displayName": "PTPTSAR",
+          "description": "Ethernet PTP time stamp addend register",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40028718",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TSA",
+              "description": "Time stamp addend",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "PTPTTHR",
+          "displayName": "PTPTTHR",
+          "description": "Ethernet PTP target time high register",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4002871C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TTSH",
+              "description": "Target time stamp high",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "PTPTTLR",
+          "displayName": "PTPTTLR",
+          "description": "Ethernet PTP target time low register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40028720",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TTSL",
+              "description": "Target time stamp low",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

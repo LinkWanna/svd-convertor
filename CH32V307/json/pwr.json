@@ -1,0 +1,149 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "pwr",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 2,
+    "fieldCount": 16
+  },
+  "peripherals": [
+    {
+      "name": "PWR",
+      "description": "Power control",
+      "groupName": "PWR",
+      "baseAddress": "0x40007000",
+      "interrupts": [
+        {
+          "name": "PVD",
+          "description": "PVD through EXTI line detection interrupt",
+          "value": 17
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR",
+          "displayName": "CTLR",
+          "description": "Power control register (PWR_CTRL)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40007000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "LPDS",
+              "description": "Low Power Deep Sleep",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "PDDS",
+              "description": "Power Down Deep Sleep",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CWUF",
+              "description": "Clear Wake-up Flag",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CSBF",
+              "description": "Clear STANDBY Flag",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "PVDE",
+              "description": "Power Voltage Detector Enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "PLS",
+              "description": "PVD Level Selection",
+              "offset": 5,
+              "width": 3
+            },
+            {
+              "name": "DBP",
+              "description": "Disable Backup Domain write protection",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "R2K_STYEN",
+              "description": "standby 2k ram enable",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "R30K_STYEN",
+              "description": "standby 30k ram enable",
+              "offset": 17,
+              "width": 1
+            },
+            {
+              "name": "R2K_VBATEN",
+              "description": "VBAT 30k ram enable",
+              "offset": 18,
+              "width": 1
+            },
+            {
+              "name": "R30K_VBATEN",
+              "description": "VBAT 30k ram enable",
+              "offset": 19,
+              "width": 1
+            },
+            {
+              "name": "RAM_LVEN",
+              "description": "Ram LV Enable",
+              "offset": 20,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CSR",
+          "displayName": "CSR",
+          "description": "Power control register (PWR_CSR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40007004",
+          "size": 32,
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "WUF",
+              "description": "Wake-Up Flag",
+              "offset": 0,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "SBF",
+              "description": "STANDBY Flag",
+              "offset": 1,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "PVDO",
+              "description": "PVD Output",
+              "offset": 2,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "EWUP",
+              "description": "Enable WKUP pin",
+              "offset": 8,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "wwdg",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 3,
+    "fieldCount": 6
+  },
+  "peripherals": [
+    {
+      "name": "WWDG",
+      "description": "Window watchdog",
+      "groupName": "WWDG",
+      "baseAddress": "0x40002C00",
+      "interrupts": [
+        {
+          "name": "WWDG",
+          "description": "Window Watchdog interrupt",
+          "value": 16
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR",
+          "displayName": "CTLR",
+          "description": "Control register (WWDG_CR)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40002C00",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x7F",
+          "fields": [
+            {
+              "name": "T",
+              "description": "7-bit counter (MSB to LSB)",
+              "offset": 0,
+              "width": 7,
+              "access": "read-write"
+            },
+            {
+              "name": "WDGA",
+              "description": "Activation bit",
+              "offset": 7,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "CFGR",
+          "displayName": "CFGR",
+          "description": "Configuration register (WWDG_CFR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40002C04",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x7F",
+          "fields": [
+            {
+              "name": "W",
+              "description": "7-bit window value",
+              "offset": 0,
+              "width": 7,
+              "access": "read-write"
+            },
+            {
+              "name": "WDGTB",
+              "description": "Timer Base",
+              "offset": 7,
+              "width": 2,
+              "access": "read-write"
+            },
+            {
+              "name": "EWI",
+              "description": "Early Wakeup Interrupt",
+              "offset": 9,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "STATR",
+          "displayName": "STATR",
+          "description": "Status register (WWDG_SR)",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40002C08",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "WEIF",
+              "description": "Early Wakeup Interrupt Flag",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

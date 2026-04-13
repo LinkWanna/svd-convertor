@@ -1,0 +1,2246 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "tim",
+  "summary": {
+    "peripheralCount": 10,
+    "registerCount": 50,
+    "fieldCount": 241
+  },
+  "peripherals": [
+    {
+      "name": "TIM1",
+      "description": "Advanced timer",
+      "groupName": "TIM",
+      "baseAddress": "0x40012C00",
+      "interrupts": [
+        {
+          "name": "TIM1_BRK",
+          "description": "TIM1 Break interrupt",
+          "value": 40
+        },
+        {
+          "name": "TIM1_UP_",
+          "description": "TIM1 Update interrupt",
+          "value": 41
+        },
+        {
+          "name": "TIM1_TRG_COM",
+          "description": "TIM1 Trigger and Commutation interrupts",
+          "value": 42
+        },
+        {
+          "name": "TIM1_CC",
+          "description": "TIM1 Capture Compare interrupt",
+          "value": 43
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40012C00",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CKD",
+              "description": "Clock division",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "ARPE",
+              "description": "Auto-reload preload enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "CMS",
+              "description": "Center-aligned mode selection",
+              "offset": 5,
+              "width": 2
+            },
+            {
+              "name": "DIR",
+              "description": "Direction",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "OPM",
+              "description": "One-pulse mode",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "URS",
+              "description": "Update request source",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "UDIS",
+              "description": "Update disable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CEN",
+              "description": "Counter enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40012C04",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "OIS4",
+              "description": "Output Idle state 4",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "OIS3N",
+              "description": "Output Idle state 3",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "OIS3",
+              "description": "Output Idle state 3",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "OIS2N",
+              "description": "Output Idle state 2",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OIS2",
+              "description": "Output Idle state 2",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "OIS1N",
+              "description": "Output Idle state 1",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "OIS1",
+              "description": "Output Idle state 1",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "TI1S",
+              "description": "TI1 selection",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "MMS",
+              "description": "Master mode selection",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "CCDS",
+              "description": "Capture/compare DMA selection",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CCUS",
+              "description": "Capture/compare control update selection",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CCPC",
+              "description": "Capture/compare preloaded control",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SMCFGR",
+          "displayName": "SMCFGR",
+          "description": "slave mode control register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40012C08",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ETP",
+              "description": "External trigger polarity",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "ECE",
+              "description": "External clock enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "ETPS",
+              "description": "External trigger prescaler",
+              "offset": 12,
+              "width": 2
+            },
+            {
+              "name": "ETF",
+              "description": "External trigger filter",
+              "offset": 8,
+              "width": 4
+            },
+            {
+              "name": "MSM",
+              "description": "Master/Slave mode",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TS",
+              "description": "Trigger selection",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "SMS",
+              "description": "Slave mode selection",
+              "offset": 0,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "DMAINTENR",
+          "displayName": "DMAINTENR",
+          "description": "DMA/Interrupt enable register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x40012C0C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TDE",
+              "description": "Trigger DMA request enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "COMDE",
+              "description": "COM DMA request enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CC4DE",
+              "description": "Capture/Compare 4 DMA request enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3DE",
+              "description": "Capture/Compare 3 DMA request enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "CC2DE",
+              "description": "Capture/Compare 2 DMA request enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC1DE",
+              "description": "Capture/Compare 1 DMA request enable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "UDE",
+              "description": "Update DMA request enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "BIE",
+              "description": "Break interrupt enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TIE",
+              "description": "Trigger interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "COMIE",
+              "description": "COM interrupt enable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC4IE",
+              "description": "Capture/Compare 4 interrupt enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3IE",
+              "description": "Capture/Compare 3 interrupt enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2IE",
+              "description": "Capture/Compare 2 interrupt enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1IE",
+              "description": "Capture/Compare 1 interrupt enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UIE",
+              "description": "Update interrupt enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "INTFR",
+          "displayName": "INTFR",
+          "description": "status register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40012C10",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CC4OF",
+              "description": "Capture/Compare 4 overcapture flag",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3OF",
+              "description": "Capture/Compare 3 overcapture flag",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "CC2OF",
+              "description": "Capture/compare 2 overcapture flag",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC1OF",
+              "description": "Capture/Compare 1 overcapture flag",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "BIF",
+              "description": "Break interrupt flag",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TIF",
+              "description": "Trigger interrupt flag",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "COMIF",
+              "description": "COM interrupt flag",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC4IF",
+              "description": "Capture/Compare 4 interrupt flag",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3IF",
+              "description": "Capture/Compare 3 interrupt flag",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2IF",
+              "description": "Capture/Compare 2 interrupt flag",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1IF",
+              "description": "Capture/compare 1 interrupt flag",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UIF",
+              "description": "Update interrupt flag",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SWEVGR",
+          "displayName": "SWEVGR",
+          "description": "event generation register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40012C14",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "BG",
+              "description": "Break generation",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TG",
+              "description": "Trigger generation",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "COMG",
+              "description": "Capture/Compare control update generation",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC4G",
+              "description": "Capture/compare 4 generation",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3G",
+              "description": "Capture/compare 3 generation",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2G",
+              "description": "Capture/compare 2 generation",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1G",
+              "description": "Capture/compare 1 generation",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UG",
+              "description": "Update generation",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR1_Output",
+          "displayName": "CHCTLR1_Output",
+          "description": "capture/compare mode register (output mode)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40012C18",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "OC2CE",
+              "description": "Output Compare 2 clear enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "OC2M",
+              "description": "Output Compare 2 mode",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "OC2PE",
+              "description": "Output Compare 2 preload enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OC2FE",
+              "description": "Output Compare 2 fast enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC2S",
+              "description": "Capture/Compare 2 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "OC1CE",
+              "description": "Output Compare 1 clear enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "OC1M",
+              "description": "Output Compare 1 mode",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "OC1PE",
+              "description": "Output Compare 1 preload enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "OC1FE",
+              "description": "Output Compare 1 fast enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1S",
+              "description": "Capture/Compare 1 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR1_Input",
+          "displayName": "CHCTLR1_Input",
+          "description": "capture/compare mode register 1 (input mode)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40012C18",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IC2F",
+              "description": "Input capture 2 filter",
+              "offset": 12,
+              "width": 4
+            },
+            {
+              "name": "IC2PCS",
+              "description": "Input capture 2 prescaler",
+              "offset": 10,
+              "width": 2
+            },
+            {
+              "name": "CC2S",
+              "description": "Capture/Compare 2 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "IC1F",
+              "description": "Input capture 1 filter",
+              "offset": 4,
+              "width": 4
+            },
+            {
+              "name": "IC1PSC",
+              "description": "Input capture 1 prescaler",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "CC1S",
+              "description": "Capture/Compare 1 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR2_Output",
+          "displayName": "CHCTLR2_Output",
+          "description": "capture/compare mode register (output mode)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x40012C1C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "OC4CE",
+              "description": "Output compare 4 clear enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "OC4M",
+              "description": "Output compare 4 mode",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "OC4PE",
+              "description": "Output compare 4 preload enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OC4FE",
+              "description": "Output compare 4 fast enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC4S",
+              "description": "Capture/Compare 4 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "OC3CE",
+              "description": "Output compare 3 clear enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "OC3M",
+              "description": "Output compare 3 mode",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "OC3PE",
+              "description": "Output compare 3 preload enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "OC3FE",
+              "description": "Output compare 3 fast enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC3S",
+              "description": "Capture/Compare 3 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR2_Input",
+          "displayName": "CHCTLR2_Input",
+          "description": "capture/compare mode register 2 (input mode)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x40012C1C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IC4F",
+              "description": "Input capture 4 filter",
+              "offset": 12,
+              "width": 4
+            },
+            {
+              "name": "IC4PSC",
+              "description": "Input capture 4 prescaler",
+              "offset": 10,
+              "width": 2
+            },
+            {
+              "name": "CC4S",
+              "description": "Capture/Compare 4 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "IC3F",
+              "description": "Input capture 3 filter",
+              "offset": 4,
+              "width": 4
+            },
+            {
+              "name": "IC3PSC",
+              "description": "Input capture 3 prescaler",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "CC3S",
+              "description": "Capture/compare 3 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CCER",
+          "displayName": "CCER",
+          "description": "capture/compare enable register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40012C20",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CC4P",
+              "description": "Capture/Compare 3 output Polarity",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CC4E",
+              "description": "Capture/Compare 4 output enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3NP",
+              "description": "Capture/Compare 3 output Polarity",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "CC3NE",
+              "description": "Capture/Compare 3 complementary output enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC3P",
+              "description": "Capture/Compare 3 output Polarity",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "CC3E",
+              "description": "Capture/Compare 3 output enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "CC2NP",
+              "description": "Capture/Compare 2 output Polarity",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "CC2NE",
+              "description": "Capture/Compare 2 complementary output enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CC2P",
+              "description": "Capture/Compare 2 output Polarity",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC2E",
+              "description": "Capture/Compare 2 output enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC1NP",
+              "description": "Capture/Compare 1 output Polarity",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC1NE",
+              "description": "Capture/Compare 1 complementary output enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1P",
+              "description": "Capture/Compare 1 output Polarity",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CC1E",
+              "description": "Capture/Compare 1 output enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CNT",
+          "displayName": "CNT",
+          "description": "counter",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40012C24",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNT",
+              "description": "counter value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "PSC",
+          "displayName": "PSC",
+          "description": "prescaler",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40012C28",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PSC",
+              "description": "Prescaler value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "ATRLR",
+          "displayName": "ATRLR",
+          "description": "auto-reload register",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x40012C2C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ATRLR",
+              "description": "Auto-reload value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "RPTCR",
+          "displayName": "RPTCR",
+          "description": "repetition counter register",
+          "addressOffset": "0x0030",
+          "absoluteAddress": "0x40012C30",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RPTCR",
+              "description": "Repetition counter value",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "CH1CVR",
+          "displayName": "CH1CVR",
+          "description": "capture/compare register 1",
+          "addressOffset": "0x0034",
+          "absoluteAddress": "0x40012C34",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH1CVR",
+              "description": "Capture/Compare 1 value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH2CVR",
+          "displayName": "CH2CVR",
+          "description": "capture/compare register 2",
+          "addressOffset": "0x0038",
+          "absoluteAddress": "0x40012C38",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH2CVR",
+              "description": "Capture/Compare 2 value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH3CVR",
+          "displayName": "CH3CVR",
+          "description": "capture/compare register 3",
+          "addressOffset": "0x003C",
+          "absoluteAddress": "0x40012C3C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH3CVR",
+              "description": "Capture/Compare value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH4CVR",
+          "displayName": "CH4CVR",
+          "description": "capture/compare register 4",
+          "addressOffset": "0x0040",
+          "absoluteAddress": "0x40012C40",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH4CVR",
+              "description": "Capture/Compare value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "BDTR",
+          "displayName": "BDTR",
+          "description": "break and dead-time register",
+          "addressOffset": "0x0044",
+          "absoluteAddress": "0x40012C44",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "MOE",
+              "description": "Main output enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "AOE",
+              "description": "Automatic output enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "BKP",
+              "description": "Break polarity",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "BKE",
+              "description": "Break enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "OSSR",
+              "description": "Off-state selection for Run mode",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OSSI",
+              "description": "Off-state selection for Idle mode",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "LOCK",
+              "description": "Lock configuration",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "DTG",
+              "description": "Dead-time generator setup",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "DMACFGR",
+          "displayName": "DMACFGR",
+          "description": "DMA control register",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40012C48",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DBL",
+              "description": "DMA burst length",
+              "offset": 8,
+              "width": 5
+            },
+            {
+              "name": "DBA",
+              "description": "DMA base address",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "DMAADR",
+          "displayName": "DMAADR",
+          "description": "DMA address for full transfer",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x40012C4C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DMAADR",
+              "description": "DMA register for burst accesses",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TIM10",
+      "derivedFrom": "TIM1",
+      "baseAddress": "0x40015000",
+      "interrupts": [
+        {
+          "name": "TIM10_BRK",
+          "description": "TIM10 Break interrupt",
+          "value": 94
+        },
+        {
+          "name": "TIM10_UP_",
+          "description": "TIM10 Update interrupt",
+          "value": 95
+        },
+        {
+          "name": "TIM10_TRG_COM",
+          "description": "TIM10 Trigger and Commutation interrupts",
+          "value": 96
+        },
+        {
+          "name": "TIM10_CC",
+          "description": "TIM10 Capture Compare interrupt",
+          "value": 97
+        }
+      ]
+    },
+    {
+      "name": "TIM2",
+      "description": "General purpose timer",
+      "groupName": "TIM",
+      "baseAddress": "0x40000000",
+      "interrupts": [
+        {
+          "name": "TIM2",
+          "description": "TIM2 global interrupt",
+          "value": 44
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40000000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CKD",
+              "description": "Clock division",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "ARPE",
+              "description": "Auto-reload preload enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "CMS",
+              "description": "Center-aligned mode selection",
+              "offset": 5,
+              "width": 2
+            },
+            {
+              "name": "DIR",
+              "description": "Direction",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "OPM",
+              "description": "One-pulse mode",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "URS",
+              "description": "Update request source",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "UDIS",
+              "description": "Update disable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CEN",
+              "description": "Counter enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40000004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TI1S",
+              "description": "TI1 selection",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "MMS",
+              "description": "Master mode selection",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "CCDS",
+              "description": "Capture/compare DMA selection",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CCUS",
+              "description": "Update selection",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CCPC",
+              "description": "Compare selection",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SMCFGR",
+          "displayName": "SMCFGR",
+          "description": "slave mode control register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40000008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ETP",
+              "description": "External trigger polarity",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "ECE",
+              "description": "External clock enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "ETPS",
+              "description": "External trigger prescaler",
+              "offset": 12,
+              "width": 2
+            },
+            {
+              "name": "ETF",
+              "description": "External trigger filter",
+              "offset": 8,
+              "width": 4
+            },
+            {
+              "name": "MSM",
+              "description": "Master/Slave mode",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TS",
+              "description": "Trigger selection",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "SMS",
+              "description": "Slave mode selection",
+              "offset": 0,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "DMAINTENR",
+          "displayName": "DMAINTENR",
+          "description": "DMA/Interrupt enable register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4000000C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TDE",
+              "description": "Trigger DMA request enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "COMDE",
+              "description": "COM DMA request enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CC4DE",
+              "description": "Capture/Compare 4 DMA request enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3DE",
+              "description": "Capture/Compare 3 DMA request enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "CC2DE",
+              "description": "Capture/Compare 2 DMA request enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC1DE",
+              "description": "Capture/Compare 1 DMA request enable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "UDE",
+              "description": "Update DMA request enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "TIE",
+              "description": "Trigger interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CC4IE",
+              "description": "Capture/Compare 4 interrupt enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3IE",
+              "description": "Capture/Compare 3 interrupt enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2IE",
+              "description": "Capture/Compare 2 interrupt enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1IE",
+              "description": "Capture/Compare 1 interrupt enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UIE",
+              "description": "Update interrupt enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "INTFR",
+          "displayName": "INTFR",
+          "description": "status register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40000010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CC4OF",
+              "description": "Capture/Compare 4 overcapture flag",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3OF",
+              "description": "Capture/Compare 3 overcapture flag",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "CC2OF",
+              "description": "Capture/compare 2 overcapture flag",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC1OF",
+              "description": "Capture/Compare 1 overcapture flag",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "TIF",
+              "description": "Trigger interrupt flag",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CC4IF",
+              "description": "Capture/Compare 4 interrupt flag",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3IF",
+              "description": "Capture/Compare 3 interrupt flag",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2IF",
+              "description": "Capture/Compare 2 interrupt flag",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1IF",
+              "description": "Capture/compare 1 interrupt flag",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UIF",
+              "description": "Update interrupt flag",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SWEVGR",
+          "displayName": "SWEVGR",
+          "description": "event generation register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40000014",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "BG",
+              "description": "Brake generation",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "TG",
+              "description": "Trigger generation",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "COMG",
+              "description": "Capture/compare generation",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC4G",
+              "description": "Capture/compare 4 generation",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC3G",
+              "description": "Capture/compare 3 generation",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CC2G",
+              "description": "Capture/compare 2 generation",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1G",
+              "description": "Capture/compare 1 generation",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "UG",
+              "description": "Update generation",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR1_Output",
+          "displayName": "CHCTLR1_Output",
+          "description": "capture/compare mode register 1 (output mode)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40000018",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "OC2CE",
+              "description": "Output compare 2 clear enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "OC2M",
+              "description": "Output compare 2 mode",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "OC2PE",
+              "description": "Output compare 2 preload enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OC2FE",
+              "description": "Output compare 2 fast enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC2S",
+              "description": "Capture/Compare 2 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "OC1CE",
+              "description": "Output compare 1 clear enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "OC1M",
+              "description": "Output compare 1 mode",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "OC1PE",
+              "description": "Output compare 1 preload enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "OC1FE",
+              "description": "Output compare 1 fast enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC1S",
+              "description": "Capture/Compare 1 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR1_Input",
+          "displayName": "CHCTLR1_Input",
+          "description": "capture/compare mode register 1 (input mode)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40000018",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IC2F",
+              "description": "Input capture 2 filter",
+              "offset": 12,
+              "width": 4
+            },
+            {
+              "name": "IC2PSC",
+              "description": "Input capture 2 prescaler",
+              "offset": 10,
+              "width": 2
+            },
+            {
+              "name": "CC2S",
+              "description": "Capture/compare 2 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "IC1F",
+              "description": "Input capture 1 filter",
+              "offset": 4,
+              "width": 4
+            },
+            {
+              "name": "IC1PSC",
+              "description": "Input capture 1 prescaler",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "CC1S",
+              "description": "Capture/Compare 1 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR2_Output",
+          "displayName": "CHCTLR2_Output",
+          "description": "capture/compare mode register 2 (output mode)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4000001C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "OC4CE",
+              "description": "Output compare 4 clear enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "OC4M",
+              "description": "Output compare 4 mode",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "OC4PE",
+              "description": "Output compare 4 preload enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "OC4FE",
+              "description": "Output compare 4 fast enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CC4S",
+              "description": "Capture/Compare 4 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "OC3CE",
+              "description": "Output compare 3 clear enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "OC3M",
+              "description": "Output compare 3 mode",
+              "offset": 4,
+              "width": 3
+            },
+            {
+              "name": "OC3PE",
+              "description": "Output compare 3 preload enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "OC3FE",
+              "description": "Output compare 3 fast enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CC3S",
+              "description": "Capture/Compare 3 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CHCTLR2_Input",
+          "displayName": "CHCTLR2_Input",
+          "description": "capture/compare mode register 2 (input mode)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4000001C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IC4F",
+              "description": "Input capture 4 filter",
+              "offset": 12,
+              "width": 4
+            },
+            {
+              "name": "IC4PSC",
+              "description": "Input capture 4 prescaler",
+              "offset": 10,
+              "width": 2
+            },
+            {
+              "name": "CC4S",
+              "description": "Capture/Compare 4 selection",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "IC3F",
+              "description": "Input capture 3 filter",
+              "offset": 4,
+              "width": 4
+            },
+            {
+              "name": "IC3PSC",
+              "description": "Input capture 3 prescaler",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "CC3S",
+              "description": "Capture/Compare 3 selection",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CCER",
+          "displayName": "CCER",
+          "description": "capture/compare enable register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40000020",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CC4P",
+              "description": "Capture/Compare 3 output Polarity",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CC4E",
+              "description": "Capture/Compare 4 output enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "CC3P",
+              "description": "Capture/Compare 3 output Polarity",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "CC3E",
+              "description": "Capture/Compare 3 output enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "CC2P",
+              "description": "Capture/Compare 2 output Polarity",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CC2E",
+              "description": "Capture/Compare 2 output enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "CC1P",
+              "description": "Capture/Compare 1 output Polarity",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CC1E",
+              "description": "Capture/Compare 1 output enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CNT",
+          "displayName": "CNT",
+          "description": "counter",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40000024",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNT",
+              "description": "counter value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "PSC",
+          "displayName": "PSC",
+          "description": "prescaler",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40000028",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PSC",
+              "description": "Prescaler value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "ATRLR",
+          "displayName": "ATRLR",
+          "description": "auto-reload register",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4000002C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ATRLR",
+              "description": "Auto-reload value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH1CVR",
+          "displayName": "CH1CVR",
+          "description": "capture/compare register 1",
+          "addressOffset": "0x0034",
+          "absoluteAddress": "0x40000034",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH1CVR",
+              "description": "Capture/Compare 1 value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH2CVR",
+          "displayName": "CH2CVR",
+          "description": "capture/compare register 2",
+          "addressOffset": "0x0038",
+          "absoluteAddress": "0x40000038",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH2CVR",
+              "description": "Capture/Compare 2 value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH3CVR",
+          "displayName": "CH3CVR",
+          "description": "capture/compare register 3",
+          "addressOffset": "0x003C",
+          "absoluteAddress": "0x4000003C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH3CVR",
+              "description": "Capture/Compare value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CH4CVR",
+          "displayName": "CH4CVR",
+          "description": "capture/compare register 4",
+          "addressOffset": "0x0040",
+          "absoluteAddress": "0x40000040",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CH4CVR",
+              "description": "Capture/Compare value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "DMACFGR",
+          "displayName": "DMACFGR",
+          "description": "DMA control register",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40000048",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DBL",
+              "description": "DMA burst length",
+              "offset": 8,
+              "width": 5
+            },
+            {
+              "name": "DBA",
+              "description": "DMA base address",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "DMAADR",
+          "displayName": "DMAADR",
+          "description": "DMA address for full transfer",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x4000004C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DMAADR",
+              "description": "DMA register for burst accesses",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TIM3",
+      "derivedFrom": "TIM2",
+      "baseAddress": "0x40000400",
+      "interrupts": [
+        {
+          "name": "TIM3",
+          "description": "TIM3 global interrupt",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "name": "TIM4",
+      "derivedFrom": "TIM2",
+      "baseAddress": "0x40000800",
+      "interrupts": [
+        {
+          "name": "TIM4",
+          "description": "TIM4 global interrupt",
+          "value": 46
+        }
+      ]
+    },
+    {
+      "name": "TIM5",
+      "derivedFrom": "TIM2",
+      "baseAddress": "0x40000C00",
+      "interrupts": [
+        {
+          "name": "TIM5",
+          "description": "TIM5 global interrupt",
+          "value": 66
+        }
+      ]
+    },
+    {
+      "name": "TIM6",
+      "description": "Basic timer",
+      "groupName": "TIM",
+      "baseAddress": "0x40001000",
+      "interrupts": [
+        {
+          "name": "TIM6",
+          "description": "TIM6 Basic interrupt",
+          "value": 70
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40001000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ARPE",
+              "description": "Auto-reload preload enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "OPM",
+              "description": "One-pulse mode",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "URS",
+              "description": "Update request source",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "UDIS",
+              "description": "Update disable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CEN",
+              "description": "Counter enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40001004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "MMS",
+              "description": "Master mode selection",
+              "offset": 4,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "DMAINTENR",
+          "displayName": "DMAINTENR",
+          "description": "DMA/Interrupt enable register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4000100C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "UDE",
+              "description": "Update DMA request enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "UIE",
+              "description": "Update interrupt enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "INTFR",
+          "displayName": "INTFR",
+          "description": "status register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40001010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "UIF",
+              "description": "Update interrupt flag",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SWEVGR",
+          "displayName": "SWEVGR",
+          "description": "event generation register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40001014",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "UG",
+              "description": "Update generation",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CNT",
+          "displayName": "CNT",
+          "description": "counter",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40001024",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNT",
+              "description": "counter value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "PSC",
+          "displayName": "PSC",
+          "description": "prescaler",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40001028",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PSC",
+              "description": "Prescaler value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "ATRLR",
+          "displayName": "ATRLR",
+          "description": "auto-reload register",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4000102C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "ATRLR",
+              "description": "Auto-reload value",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TIM7",
+      "derivedFrom": "TIM6",
+      "baseAddress": "0x40001400",
+      "interrupts": [
+        {
+          "name": "TIM7",
+          "description": "TIM8 Basic interrupt",
+          "value": 71
+        }
+      ]
+    },
+    {
+      "name": "TIM8",
+      "derivedFrom": "TIM1",
+      "baseAddress": "0x40013400",
+      "interrupts": [
+        {
+          "name": "TIM8_BRK",
+          "description": "TIM8 Break interrupt",
+          "value": 59
+        },
+        {
+          "name": "TIM8_UP_",
+          "description": "TIM8 Update interrupt",
+          "value": 60
+        },
+        {
+          "name": "TIM8_TRG_COM",
+          "description": "TIM8 Trigger and Commutation interrupts",
+          "value": 61
+        },
+        {
+          "name": "TIM8_CC",
+          "description": "TIM8 Capture Compare interrupt",
+          "value": 62
+        }
+      ]
+    },
+    {
+      "name": "TIM9",
+      "derivedFrom": "TIM1",
+      "baseAddress": "0x40014C00",
+      "interrupts": [
+        {
+          "name": "TIM9_BRK",
+          "description": "TIM9 Break interrupt",
+          "value": 90
+        },
+        {
+          "name": "TIM9_UP_",
+          "description": "TIM9 Update interrupt",
+          "value": 91
+        },
+        {
+          "name": "TIM9_TRG_COM",
+          "description": "TIM9 Trigger and Commutation interrupts",
+          "value": 92
+        },
+        {
+          "name": "TIM9_CC",
+          "description": "TIM9 Capture Compare interrupt",
+          "value": 93
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "dac",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 13,
+    "fieldCount": 30
+  },
+  "peripherals": [
+    {
+      "name": "DAC",
+      "description": "Digital to analog converter",
+      "groupName": "DAC",
+      "baseAddress": "0x40007400",
+      "registers": [
+        {
+          "name": "CTLR",
+          "displayName": "CTLR",
+          "description": "Control register (DAC_CR)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40007400",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "EN1",
+              "description": "DAC channel1 enable",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "BOFF1",
+              "description": "DAC channel1 output buffer disable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "TEN1",
+              "description": "DAC channel1 trigger enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TSEL1",
+              "description": "DAC channel1 trigger selection",
+              "offset": 3,
+              "width": 3
+            },
+            {
+              "name": "WAVE1",
+              "description": "DAC channel1 noise/triangle wave generation enable",
+              "offset": 6,
+              "width": 2
+            },
+            {
+              "name": "MAMP1",
+              "description": "DAC channel1 mask/amplitude selector",
+              "offset": 8,
+              "width": 4
+            },
+            {
+              "name": "DMAEN1",
+              "description": "DAC channel1 DMA enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "EN2",
+              "description": "DAC channel2 enable",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "BOFF2",
+              "description": "DAC channel2 output buffer disable",
+              "offset": 17,
+              "width": 1
+            },
+            {
+              "name": "TEN2",
+              "description": "DAC channel2 trigger enable",
+              "offset": 18,
+              "width": 1
+            },
+            {
+              "name": "TSEL2",
+              "description": "DAC channel2 trigger selection",
+              "offset": 19,
+              "width": 3
+            },
+            {
+              "name": "WAVE2",
+              "description": "DAC channel2 noise/triangle wave generation enable",
+              "offset": 22,
+              "width": 2
+            },
+            {
+              "name": "MAMP2",
+              "description": "DAC channel2 mask/amplitude selector",
+              "offset": 24,
+              "width": 4
+            },
+            {
+              "name": "DMAEN2",
+              "description": "DAC channel2 DMA enable",
+              "offset": 28,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SWTR",
+          "displayName": "SWTR",
+          "description": "DAC software trigger register (DAC_SWTRIGR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40007404",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SWTRIG1",
+              "description": "DAC channel1 software trigger",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "SWTRIG2",
+              "description": "DAC channel2 software trigger",
+              "offset": 1,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "R12BDHR1",
+          "displayName": "R12BDHR1",
+          "description": "DAC channel1 12-bit right-aligned data holding register(DAC_DHR12R1)",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40007408",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 12-bit right-aligned data",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "L12BDHR1",
+          "displayName": "L12BDHR1",
+          "description": "DAC channel1 12-bit left aligned data holding register (DAC_DHR12L1)",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4000740C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 12-bit left-aligned data",
+              "offset": 4,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "R8BDHR1",
+          "displayName": "R8BDHR1",
+          "description": "DAC channel1 8-bit right aligned data holding register (DAC_DHR8R1)",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40007410",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 8-bit right-aligned data",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "R12BDHR2",
+          "displayName": "R12BDHR2",
+          "description": "DAC channel2 12-bit right aligned data holding register (DAC_DHR12R2)",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40007414",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 12-bit right-aligned data",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "L12BDHR2",
+          "displayName": "L12BDHR2",
+          "description": "DAC channel2 12-bit left aligned data holding register (DAC_DHR12L2)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40007418",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 12-bit left-aligned data",
+              "offset": 4,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "R8BDHR2",
+          "displayName": "R8BDHR2",
+          "description": "DAC channel2 8-bit right-aligned data holding register (DAC_DHR8R2)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4000741C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 8-bit right-aligned data",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "RD12BDHR",
+          "displayName": "RD12BDHR",
+          "description": "Dual DAC 12-bit right-aligned data holding register (DAC_DHR12RD), Bits 31:28 Reserved, Bits 15:12 Reserved",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40007420",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 12-bit right-aligned data",
+              "offset": 0,
+              "width": 12
+            },
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 12-bit right-aligned data",
+              "offset": 16,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "LD12BDHR",
+          "displayName": "LD12BDHR",
+          "description": "DUAL DAC 12-bit left aligned data holding register (DAC_DHR12LD), Bits 19:16 Reserved, Bits 3:0 Reserved",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40007424",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 12-bit left-aligned data",
+              "offset": 4,
+              "width": 12
+            },
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 12-bit right-aligned data",
+              "offset": 20,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "RD8BDHR",
+          "displayName": "RD8BDHR",
+          "description": "DUAL DAC 8-bit right aligned data holding register (DAC_DHR8RD), Bits 31:16 Reserved",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40007428",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DHR",
+              "description": "DAC channel1 8-bit right-aligned data",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "DACC2DHR",
+              "description": "DAC channel2 8-bit right-aligned data",
+              "offset": 8,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "DOR1",
+          "displayName": "DOR1",
+          "description": "DAC channel1 data output register (DAC_DOR1)",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4000742C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC1DOR",
+              "description": "DAC channel1 data output",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "DOR2",
+          "displayName": "DOR2",
+          "description": "DAC channel2 data output register (DAC_DOR2)",
+          "addressOffset": "0x0030",
+          "absoluteAddress": "0x40007430",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DACC2DOR",
+              "description": "DAC channel2 data output",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

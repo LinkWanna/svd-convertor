@@ -1,6 +1,6 @@
 #pragma once
 
-#include "common.h"
+#include "types.h"
 
 typedef struct {
     io_rw_8 a;
@@ -16,8 +16,12 @@ typedef struct {
     io_ro_64 k;
     io_wo_64 l;
 
+    // pointer
     ioptr m;
     const_ioptr n;
+
+    // array
+    io_ro_16 o[10];
 } template_t;
 
 #define template1 ((template_t *)0x40000000)

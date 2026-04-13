@@ -1,0 +1,787 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "adc",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 20,
+    "fieldCount": 88
+  },
+  "peripherals": [
+    {
+      "name": "ADC2",
+      "description": "Analog to digital converter",
+      "groupName": "ADC",
+      "baseAddress": "0x40012800",
+      "registers": [
+        {
+          "name": "STATR",
+          "displayName": "STATR",
+          "description": "status register",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40012800",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STRT",
+              "description": "Regular channel start flag",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "JSTRT",
+              "description": "Injected channel start flag",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "JEOC",
+              "description": "Injected channel end of conversion",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "EOC",
+              "description": "Regular channel end of conversion",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "AWD",
+              "description": "Analog watchdog flag",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1/TKEY_V_CTLR",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40012804",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PGA",
+              "description": "ADC_PGA",
+              "offset": 27,
+              "width": 2
+            },
+            {
+              "name": "BUFEN",
+              "description": "TKEY_BUF_Enable",
+              "offset": 26,
+              "width": 1
+            },
+            {
+              "name": "TKITUNE",
+              "description": "TKEY_I enable",
+              "offset": 25,
+              "width": 1
+            },
+            {
+              "name": "TKEYEN",
+              "description": "TKEY enable, including TKEY_F and TKEY_V",
+              "offset": 24,
+              "width": 1
+            },
+            {
+              "name": "AWDEN",
+              "description": "Analog watchdog enable on regular channels",
+              "offset": 23,
+              "width": 1
+            },
+            {
+              "name": "JAWDEN",
+              "description": "Analog watchdog enable on injected channels",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "DUALMOD",
+              "description": "Dual mode selection",
+              "offset": 16,
+              "width": 4
+            },
+            {
+              "name": "DISCNUM",
+              "description": "Discontinuous mode channel count",
+              "offset": 13,
+              "width": 3
+            },
+            {
+              "name": "JDISCEN",
+              "description": "Discontinuous mode on injected channels",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "DISCEN",
+              "description": "Discontinuous mode on regular channels",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "JAUTO",
+              "description": "Automatic injected group conversion",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "AWDSGL",
+              "description": "Enable the watchdog on a single channel in scan mode",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "SCAN",
+              "description": "Scan mode enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "JEOCIE",
+              "description": "Interrupt enable for injected channels",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "AWDIE",
+              "description": "Analog watchdog interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "EOCIE",
+              "description": "Interrupt enable for EOC",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "AWDCH",
+              "description": "Analog watchdog channel select bits",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40012808",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TSVREFE",
+              "description": "Temperature sensor and VREFINT enable",
+              "offset": 23,
+              "width": 1
+            },
+            {
+              "name": "SWSTART",
+              "description": "Start conversion of regular channels",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "JSWSTART",
+              "description": "Start conversion of injected channels",
+              "offset": 21,
+              "width": 1
+            },
+            {
+              "name": "EXTTRIG",
+              "description": "External trigger conversion mode for regular channels",
+              "offset": 20,
+              "width": 1
+            },
+            {
+              "name": "EXTSEL",
+              "description": "External event select for regular group",
+              "offset": 17,
+              "width": 3
+            },
+            {
+              "name": "JEXTTRIG",
+              "description": "External trigger conversion mode for injected channels",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "JEXTSEL",
+              "description": "External event select for injected group",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "ALIGN",
+              "description": "Data alignment",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "DMA",
+              "description": "Direct memory access mode",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "RSTCAL",
+              "description": "Reset calibration",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "CAL",
+              "description": "A/D calibration",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CONT",
+              "description": "Continuous conversion",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "ADON",
+              "description": "A/D converter ON / OFF",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "SAMPTR1_CHARGE1",
+          "displayName": "SAMPTR1_CHARGE1",
+          "description": "sample time register 1",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4001280C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SMP10_TKCG10",
+              "description": "Channel 10 sample time selection",
+              "offset": 0,
+              "width": 3
+            },
+            {
+              "name": "SMP11_TKCG11",
+              "description": "Channel 11 sample time selection",
+              "offset": 3,
+              "width": 3
+            },
+            {
+              "name": "SMP12_TKCG12",
+              "description": "Channel 12 sample time selection",
+              "offset": 6,
+              "width": 3
+            },
+            {
+              "name": "SMP13_TKCG13",
+              "description": "Channel 13 sample time selection",
+              "offset": 9,
+              "width": 3
+            },
+            {
+              "name": "SMP14_TKCG14",
+              "description": "Channel 14 sample time selection",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "SMP15_TKCG15",
+              "description": "Channel 15 sample time selection",
+              "offset": 15,
+              "width": 3
+            },
+            {
+              "name": "SMP16_TKCG16",
+              "description": "Channel 16 sample time selection",
+              "offset": 18,
+              "width": 3
+            },
+            {
+              "name": "SMP17_TKCG17",
+              "description": "Channel 17 sample time selection",
+              "offset": 21,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "SAMPTR2_CHARGE2",
+          "displayName": "SAMPTR2_CHARGE2",
+          "description": "sample time register 2",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40012810",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SMP0_TKCG0",
+              "description": "Channel 0 sample time selection",
+              "offset": 0,
+              "width": 3
+            },
+            {
+              "name": "SMP1_TKCG1",
+              "description": "Channel 1 sample time selection",
+              "offset": 3,
+              "width": 3
+            },
+            {
+              "name": "SMP2_TKCG2",
+              "description": "Channel 2 sample time selection",
+              "offset": 6,
+              "width": 3
+            },
+            {
+              "name": "SMP3_TKCG3",
+              "description": "Channel 3 sample time selection",
+              "offset": 9,
+              "width": 3
+            },
+            {
+              "name": "SMP4_TKCG4",
+              "description": "Channel 4 sample time selection",
+              "offset": 12,
+              "width": 3
+            },
+            {
+              "name": "SMP5_TKCG5",
+              "description": "Channel 5 sample time selection",
+              "offset": 15,
+              "width": 3
+            },
+            {
+              "name": "SMP6_TKCG6",
+              "description": "Channel 6 sample time selection",
+              "offset": 18,
+              "width": 3
+            },
+            {
+              "name": "SMP7_TKCG7",
+              "description": "Channel 7 sample time selection",
+              "offset": 21,
+              "width": 3
+            },
+            {
+              "name": "SMP8_TKCG8",
+              "description": "Channel 8 sample time selection",
+              "offset": 24,
+              "width": 3
+            },
+            {
+              "name": "SMP9_TKCG9",
+              "description": "Channel 9 sample time selection",
+              "offset": 27,
+              "width": 3
+            }
+          ]
+        },
+        {
+          "name": "IOFR1",
+          "displayName": "IOFR1",
+          "description": "injected channel data offset register x",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40012814",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JOFFSET1",
+              "description": "Data offset for injected channel x",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "IOFR2",
+          "displayName": "IOFR2",
+          "description": "injected channel data offset register x",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40012818",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JOFFSET2",
+              "description": "Data offset for injected channel x",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "IOFR3",
+          "displayName": "IOFR3",
+          "description": "injected channel data offset register x",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4001281C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JOFFSET3",
+              "description": "Data offset for injected channel x",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "IOFR4",
+          "displayName": "IOFR4",
+          "description": "injected channel data offset register x",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40012820",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JOFFSET4",
+              "description": "Data offset for injected channel x",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "WDHTR",
+          "displayName": "WDHTR",
+          "description": "watchdog higher threshold register",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40012824",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HT",
+              "description": "Analog watchdog higher threshold",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "WDLTR",
+          "displayName": "WDLTR",
+          "description": "watchdog lower threshold register",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40012828",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "LT",
+              "description": "Analog watchdog lower threshold",
+              "offset": 0,
+              "width": 12
+            }
+          ]
+        },
+        {
+          "name": "RSQR1",
+          "displayName": "RSQR1",
+          "description": "regular sequence register 1",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4001282C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "L",
+              "description": "Regular channel sequence length",
+              "offset": 20,
+              "width": 4
+            },
+            {
+              "name": "SQ16",
+              "description": "16th conversion in regular sequence",
+              "offset": 15,
+              "width": 5
+            },
+            {
+              "name": "SQ15",
+              "description": "15th conversion in regular sequence",
+              "offset": 10,
+              "width": 5
+            },
+            {
+              "name": "SQ14",
+              "description": "14th conversion in regular sequence",
+              "offset": 5,
+              "width": 5
+            },
+            {
+              "name": "SQ13",
+              "description": "13th conversion in regular sequence",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "RSQR2",
+          "displayName": "RSQR2",
+          "description": "regular sequence register 2",
+          "addressOffset": "0x0030",
+          "absoluteAddress": "0x40012830",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SQ12",
+              "description": "12th conversion in regular sequence",
+              "offset": 25,
+              "width": 5
+            },
+            {
+              "name": "SQ11",
+              "description": "11th conversion in regular sequence",
+              "offset": 20,
+              "width": 5
+            },
+            {
+              "name": "SQ10",
+              "description": "10th conversion in regular sequence",
+              "offset": 15,
+              "width": 5
+            },
+            {
+              "name": "SQ9",
+              "description": "9th conversion in regular sequence",
+              "offset": 10,
+              "width": 5
+            },
+            {
+              "name": "SQ8",
+              "description": "8th conversion in regular sequence",
+              "offset": 5,
+              "width": 5
+            },
+            {
+              "name": "SQ7",
+              "description": "7th conversion in regular sequence",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "RSQR3__CHANNEL",
+          "displayName": "RSQR3__CHANNEL",
+          "description": "regular sequence register 3;TKEY_V_CHANNEL",
+          "addressOffset": "0x0034",
+          "absoluteAddress": "0x40012834",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SQ6",
+              "description": "6th conversion in regular sequence",
+              "offset": 25,
+              "width": 5
+            },
+            {
+              "name": "SQ5",
+              "description": "5th conversion in regular sequence",
+              "offset": 20,
+              "width": 5
+            },
+            {
+              "name": "SQ4",
+              "description": "4th conversion in regular sequence",
+              "offset": 15,
+              "width": 5
+            },
+            {
+              "name": "SQ3",
+              "description": "3rd conversion in regular sequence",
+              "offset": 10,
+              "width": 5
+            },
+            {
+              "name": "SQ2",
+              "description": "2nd conversion in regular sequence",
+              "offset": 5,
+              "width": 5
+            },
+            {
+              "name": "SQ1__CHSEL",
+              "description": "1st conversion in regular sequence;TKDY_V channel select",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "ISQR",
+          "displayName": "ISQR",
+          "description": "injected sequence register",
+          "addressOffset": "0x0038",
+          "absoluteAddress": "0x40012838",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JL",
+              "description": "Injected sequence length",
+              "offset": 20,
+              "width": 2
+            },
+            {
+              "name": "JSQ4",
+              "description": "4th conversion in injected sequence",
+              "offset": 15,
+              "width": 5
+            },
+            {
+              "name": "JSQ3",
+              "description": "3rd conversion in injected sequence",
+              "offset": 10,
+              "width": 5
+            },
+            {
+              "name": "JSQ2",
+              "description": "2nd conversion in injected sequence",
+              "offset": 5,
+              "width": 5
+            },
+            {
+              "name": "JSQ1",
+              "description": "1st conversion in injected sequence",
+              "offset": 0,
+              "width": 5
+            }
+          ]
+        },
+        {
+          "name": "IDATAR1_CHGOFFSET",
+          "displayName": "IDATAR1_CHGOFFSET",
+          "description": "injected data register x_Charge data offset for injected channel x",
+          "addressOffset": "0x003C",
+          "absoluteAddress": "0x4001283C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IDATA0_7_TKCGOFFSET",
+              "description": "Injected data_Touch key charge data offset for injected channel x",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "IDATA8_15",
+              "description": "Injected data",
+              "offset": 8,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IDATAR2",
+          "displayName": "IDATAR2",
+          "description": "injected data register x",
+          "addressOffset": "0x0040",
+          "absoluteAddress": "0x40012840",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JDATA",
+              "description": "Injected data",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "IDATAR3",
+          "displayName": "IDATAR3",
+          "description": "injected data register x",
+          "addressOffset": "0x0044",
+          "absoluteAddress": "0x40012844",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JDATA",
+              "description": "Injected data",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "IDATAR4",
+          "displayName": "IDATAR4",
+          "description": "injected data register x",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40012848",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "JDATA",
+              "description": "Injected data",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "RDATAR_DR_ACT_DCG",
+          "displayName": "RDATAR_DR_ACT_DCG",
+          "description": "regular data register_start and discharge time register",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0x4001284C",
+          "size": 32,
+          "access": "read-only_write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATA0_7_TKACT_DCG",
+              "description": "Regular data_Touch key start and discharge time register",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "DATA8_15",
+              "description": "Regular data",
+              "offset": 8,
+              "width": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

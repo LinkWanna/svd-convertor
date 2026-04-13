@@ -1,0 +1,109 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "dbg",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 2,
+    "fieldCount": 11
+  },
+  "peripherals": [
+    {
+      "name": "DBG",
+      "description": "Debug support",
+      "groupName": "DBG",
+      "baseAddress": "0xE000D000",
+      "registers": [
+        {
+          "name": "CFGR1",
+          "displayName": "CFGR1",
+          "description": "DBGMCU_CFGR1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0xE000D000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DEG_IWDG",
+              "description": "DEG_IWDG",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DEG_WWDG",
+              "description": "DEG_WWDG",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "DEG_I2C1",
+              "description": "DEG_I2C1",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DEG_I2C2",
+              "description": "DEG_I2C2",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "DEG_TIM1",
+              "description": "DEG_TIM1",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "DEG_TIM2",
+              "description": "DEG_TIM2",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "DEG_TIM3",
+              "description": "DEG_TIM3",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "DEG_TIM4",
+              "description": "DEG_TIM4",
+              "offset": 7,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CFGR2",
+          "displayName": "CFGR2",
+          "description": "DBGMCU_CFGR2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0xE000D004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DBG_SLEEP",
+              "description": "DBG_SLEEP",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DBG_STOP",
+              "description": "DBG_STOP",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "DBG_STANDBY",
+              "description": "DBG_STANDBY",
+              "offset": 2,
+              "width": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

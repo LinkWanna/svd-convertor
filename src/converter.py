@@ -75,7 +75,6 @@ def build_payload(
 def dump_split_files(
     payload: dict[str, Any],
     output_dir: str | Path,
-    *,
     indent: int = 2,
     compact: bool = False,
     summary_file_name: str = "chip_summary.json",
@@ -88,6 +87,7 @@ def dump_split_files(
     group_cache: dict[str, str] = {}
 
     def resolve_group_key(peripheral: dict[str, Any], visiting: set[str] | None = None) -> str:
+        """Resolve the group key for a peripheral, considering derivedFrom relationships."""
         name = str(peripheral.get("name") or "")
         if name and name in group_cache:
             return group_cache[name]
@@ -113,11 +113,13 @@ def dump_split_files(
             group_cache[name] = group
         return group
 
+    # First, group peripherals by their resolved group key
     groups: dict[str, list[dict[str, Any]]] = {}
     for peripheral in peripherals:
         key = resolve_group_key(peripheral)
         groups.setdefault(key, []).append(peripheral)
 
+    # Then, for each group, create a JSON file and collect summary info
     file_summaries: list[dict[str, Any]] = []
     for group_key, peripherals in sorted(groups.items()):
         peripheral_count = len(peripherals)

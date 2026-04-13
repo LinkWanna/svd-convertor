@@ -1,0 +1,463 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "dvp",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 15,
+    "fieldCount": 37
+  },
+  "peripherals": [
+    {
+      "name": "DVP",
+      "description": "Digital Video Port",
+      "groupName": "DVP",
+      "baseAddress": "0x50050000",
+      "interrupts": [
+        {
+          "name": "DVP",
+          "description": "DVP global Interrupt interrupt",
+          "value": 86
+        }
+      ],
+      "registers": [
+        {
+          "name": "CR0",
+          "displayName": "CR0",
+          "description": "Digital Video control register (DVP_CR0)",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x50050000",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_ENABLE",
+              "description": "DVP enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_V_POLAR",
+              "description": "DVP VSYNC polarity control",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_H_POLAR",
+              "description": "DVP HSYNC polarity control",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_P_POLAR",
+              "description": "DVP PCLK polarity control",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_MSK_DAT_MOD",
+              "description": "DVP data mode",
+              "offset": 4,
+              "width": 2
+            },
+            {
+              "name": "RB_DVP_JPEG",
+              "description": "DVP JPEG mode",
+              "offset": 6,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "CR1",
+          "displayName": "CR1",
+          "description": "Digital Video control register (DVP_CR1)",
+          "addressOffset": "0x0001",
+          "absoluteAddress": "0x50050001",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x6",
+          "fields": [
+            {
+              "name": "RB_DVP_DMA_EN",
+              "description": "DVP dma enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_ALL_CLR",
+              "description": "DVP all clear",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_RCV_CLR",
+              "description": "DVP receive logic clear",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_BUF_TOG",
+              "description": "DVP bug toggle by software",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_CM",
+              "description": "DVP capture mode",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_CROP",
+              "description": "DVP Crop feature enable",
+              "offset": 5,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_FCRC",
+              "description": "DVP frame capture rate control",
+              "offset": 6,
+              "width": 2,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "IER",
+          "displayName": "IER",
+          "description": "Digital Video Interrupt register (DVP_IER)",
+          "addressOffset": "0x0002",
+          "absoluteAddress": "0x50050002",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_IE_STR_FRM",
+              "description": "DVP frame start interrupt enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IE_ROW_DONE",
+              "description": "DVP row received done interrupt enable",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IE_FRM_DONE",
+              "description": "DVP frame received done interrupt enable",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IE_FIFO_OV",
+              "description": "DVP receive fifo overflow interrupt enable",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IE_STP_FRM",
+              "description": "DVP frame stop interrupt enable",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "ROW_NUM",
+          "displayName": "ROW_NUM",
+          "description": "Image line count configuration register (DVP_ROW_NUM)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x50050004",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_ROW_NUM",
+              "description": "The number of rows of frame image data",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "COL_NUM",
+          "displayName": "COL_NUM",
+          "description": "Image column number configuration register (DVP_COL_NUM)",
+          "addressOffset": "0x0006",
+          "absoluteAddress": "0x50050006",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_COL_NUM",
+              "description": "Number of PCLK cycles for row data",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "DMA_BUF0",
+          "displayName": "DMA_BUF0",
+          "description": "Digital Video DMA address register (DVP_DMA_BUF0)",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x50050008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_DMA_BUF0",
+              "description": "DMA receive address 0",
+              "offset": 0,
+              "width": 17,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "DMA_BUF1",
+          "displayName": "DMA_BUF1",
+          "description": "Digital Video DMA address register (DVP_DMA_BUF1)",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x5005000C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_DMA_BUF1",
+              "description": "DMA receive address 1",
+              "offset": 0,
+              "width": 17,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "IFR",
+          "displayName": "IFR",
+          "description": "Digital Video Flag register (DVP_IFR)",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x50050010",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_IF_STR_FRM",
+              "description": "DVP frame start interrupt enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IF_ROW_DONE",
+              "description": "DVP row received done interrupt enable",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IF_FRM_DONE",
+              "description": "DVP frame received done interrupt enable",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IF_FIFO_OV",
+              "description": "DVP receive fifo overflow interrupt enable",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "RB_DVP_IF_STP_FRM",
+              "description": "DVP frame stop interrupt enable",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "STATUS",
+          "displayName": "STATUS",
+          "description": "Digital Video STATUS register (DVP_STATUS)",
+          "addressOffset": "0x0011",
+          "absoluteAddress": "0x50050011",
+          "size": 8,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_FIFO_RDY",
+              "description": "DVP frame start interrupt enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "RB_DVP_FIFO_FULL",
+              "description": "DVP row received done interrupt enable",
+              "offset": 1,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "RB_DVP_FIFO_OV",
+              "description": "DVP frame received done interrupt enable",
+              "offset": 2,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "RB_DVP_MSK_FIFO_CNT",
+              "description": "DVP receive fifo overflow interrupt enable",
+              "offset": 4,
+              "width": 3,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "ROW_CNT",
+          "displayName": "ROW_CNT",
+          "description": "Digital Video line counter register (DVP_ROW_CNT)",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x50050014",
+          "size": 16,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_ROW_CNT",
+              "description": "The number of rows of frame image data",
+              "offset": 0,
+              "width": 16,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "HOFFCNT",
+          "displayName": "HOFFCNT",
+          "description": "Digital Video horizontal displacement register (DVP_HOFFCNT)",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x50050018",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_HOFFCNT",
+              "description": "Number of PCLK cycles for row data",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "VST",
+          "displayName": "VST",
+          "description": "Digital Video line number register (DVP_VST)",
+          "addressOffset": "0x001A",
+          "absoluteAddress": "0x5005001A",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_VST",
+              "description": "The number of lines captured by the image",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "CAPCNT",
+          "displayName": "CAPCNT",
+          "description": "Digital Video Capture count register (DVP_CAPCNT)",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x5005001C",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_CAPCNT",
+              "description": "Number of PCLK cycles captured by clipping window",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "VLINE",
+          "displayName": "VLINE",
+          "description": "Digital Video Vertical line count register (DVP_VLINE)",
+          "addressOffset": "0x001E",
+          "absoluteAddress": "0x5005001E",
+          "size": 16,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_VLINE",
+              "description": "Crop the number of rows captured by window",
+              "offset": 0,
+              "width": 16,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "DR",
+          "displayName": "DR",
+          "description": "Digital Video Data register (DVP_DR)",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x50050020",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RB_DVP_DR",
+              "description": "Prevent DMA overflow",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

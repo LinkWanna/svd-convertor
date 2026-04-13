@@ -1,0 +1,830 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "sdio",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 18,
+    "fieldCount": 98
+  },
+  "peripherals": [
+    {
+      "name": "SDIO",
+      "description": "Secure digital input/output interface",
+      "groupName": "SDIO",
+      "baseAddress": "0x40018000",
+      "interrupts": [
+        {
+          "name": "SDIO",
+          "description": "SDIO global interrupt",
+          "value": 65
+        }
+      ],
+      "registers": [
+        {
+          "name": "POWER",
+          "displayName": "POWER",
+          "description": "Bits 1:0 = PWRCTRL: Power supply control bits",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40018000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PWRCTRL",
+              "description": "Power supply control bits",
+              "offset": 0,
+              "width": 2
+            }
+          ]
+        },
+        {
+          "name": "CLKCR",
+          "displayName": "CLKCR",
+          "description": "SDI clock control register (SDIO_CLKCR)",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40018004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CLKDIV",
+              "description": "Clock divide factor",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "CLKEN",
+              "description": "Clock enable bit",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "PWRSAV",
+              "description": "Power saving configuration bit",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "BYPASS",
+              "description": "Clock divider bypass enable bit",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "WIDBUS",
+              "description": "Wide bus mode enable bit",
+              "offset": 11,
+              "width": 2
+            },
+            {
+              "name": "NEGEDGE",
+              "description": "SDIO_CK dephasing selection bit",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "HWFC_EN",
+              "description": "HW Flow Control enable",
+              "offset": 14,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "ARG",
+          "displayName": "ARG",
+          "description": "Bits 31:0 = : Command argument",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40018008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CMDARG",
+              "description": "Command argument",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "CMD",
+          "displayName": "CMD",
+          "description": "SDIO command register (SDIO_CMD)",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4001800C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CMDINDEX",
+              "description": "Command index",
+              "offset": 0,
+              "width": 6
+            },
+            {
+              "name": "WAITRESP",
+              "description": "Wait for response bits",
+              "offset": 6,
+              "width": 2
+            },
+            {
+              "name": "WAITINT",
+              "description": "CPSM waits for interrupt request",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "WAITPEND",
+              "description": "CPSM Waits for ends of data transfer (CmdPend internal signal)",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "CPSMEN",
+              "description": "Command path state machine (CPSM) Enable bit",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "SDIOSuspend",
+              "description": "SD I/O suspend command",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "ENCMDcompl",
+              "description": "Enable CMD completion",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "nIEN",
+              "description": "not Interrupt Enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CE_ATACMD",
+              "description": "CE-ATA command",
+              "offset": 14,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "RESPCMD",
+          "displayName": "RESPCMD",
+          "description": "SDIO command register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40018010",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RESPCMD",
+              "description": "Response command index",
+              "offset": 0,
+              "width": 6
+            }
+          ]
+        },
+        {
+          "name": "RESP1",
+          "displayName": "RESP1",
+          "description": "Bits 31:0 = CARDSTATUS1",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40018014",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CARDSTATUS1",
+              "description": "Card status 1",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "RESP2",
+          "displayName": "RESP2",
+          "description": "Bits 31:0 = CARDSTATUS2",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40018018",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CARDSTATUS2",
+              "description": "Card status 2",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "RESP3",
+          "displayName": "RESP3",
+          "description": "Bits 31:0 = CARDSTATUS3",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4001801C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CARDSTATUS3",
+              "description": "Card status 3",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "RESP4",
+          "displayName": "RESP4",
+          "description": "Bits 31:0 = CARDSTATUS4",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40018020",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CARDSTATUS4",
+              "description": "Card status 4",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DTIMER",
+          "displayName": "DTIMER",
+          "description": "Bits 31:0 = DATATIME: Data timeout period",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40018024",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATATIME",
+              "description": "Data timeout period",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "DLEN",
+          "displayName": "DLEN",
+          "description": "Bits 24:0 = DATALENGTH: Data length value",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0x40018028",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATALENGTH",
+              "description": "Data length value",
+              "offset": 0,
+              "width": 25
+            }
+          ]
+        },
+        {
+          "name": "DCTRL",
+          "displayName": "DCTRL",
+          "description": "SDIO data control register (SDIO_DCTRL)",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0x4001802C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DTEN",
+              "description": "Data transfer enabled bit",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DTDIR",
+              "description": "Data transfer direction selection",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "DTMODE",
+              "description": "Data transfer mode selection 1: Stream or SDIO multibyte data transfer",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DMAEN",
+              "description": "DMA enable bit",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "DBLOCKSIZE",
+              "description": "Data block size",
+              "offset": 4,
+              "width": 4
+            },
+            {
+              "name": "PWSTART",
+              "description": "Read wait start",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "PWSTOP",
+              "description": "Read wait stop",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "RWMOD",
+              "description": "Read wait mode",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "SDIOEN",
+              "description": "SD I/O enable functions",
+              "offset": 11,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "DCOUNT",
+          "displayName": "DCOUNT",
+          "description": "Bits 24:0 = DATACOUNT: Data count value",
+          "addressOffset": "0x0030",
+          "absoluteAddress": "0x40018030",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATACOUNT",
+              "description": "Data count value",
+              "offset": 0,
+              "width": 25
+            }
+          ]
+        },
+        {
+          "name": "STA",
+          "displayName": "STA",
+          "description": "SDIO status register (SDIO_STA)",
+          "addressOffset": "0x0034",
+          "absoluteAddress": "0x40018034",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CCRCFAIL",
+              "description": "Command response received (CRC check failed)",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DCRCFAIL",
+              "description": "Data block sent/received (CRC check failed)",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CTIMEOUT",
+              "description": "Command response timeout",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DTIMEOUT",
+              "description": "Data timeout",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "TXUNDERR",
+              "description": "Transmit FIFO underrun error",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "RXOVERR",
+              "description": "Received FIFO overrun error",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CMDREND",
+              "description": "Command response received (CRC check passed)",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CMDSENT",
+              "description": "Command sent (no response required)",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "DATAEND",
+              "description": "Data end (data counter, SDIDCOUNT, is zero)",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "STBITERR",
+              "description": "Start bit not detected on all data signals in wide bus mode",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "DBCKEND",
+              "description": "Data block sent/received (CRC check passed)",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CMDACT",
+              "description": "Command transfer in progress",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "TXACT",
+              "description": "Data transmit in progress",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "RXACT",
+              "description": "Data receive in progress",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOHE",
+              "description": "Transmit FIFO half empty: at least 8 words can be written into the FIFO",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOHF",
+              "description": "Receive FIFO half full: there are at least 8 words in the FIFO",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOF",
+              "description": "Transmit FIFO full",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOF",
+              "description": "Receive FIFO full",
+              "offset": 17,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOE",
+              "description": "Transmit FIFO empty",
+              "offset": 18,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOE",
+              "description": "Receive FIFO empty",
+              "offset": 19,
+              "width": 1
+            },
+            {
+              "name": "TXDAVL",
+              "description": "Data available in transmit FIFO",
+              "offset": 20,
+              "width": 1
+            },
+            {
+              "name": "RXDAVL",
+              "description": "Data available in receive FIFO",
+              "offset": 21,
+              "width": 1
+            },
+            {
+              "name": "SDIOIT",
+              "description": "SDIO interrupt received",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "CEATAEND",
+              "description": "CE-ATA command completion signal received for CMD61",
+              "offset": 23,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "ICR",
+          "displayName": "ICR",
+          "description": "SDIO interrupt clear register (SDIO_ICR)",
+          "addressOffset": "0x0038",
+          "absoluteAddress": "0x40018038",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CCRCFAILC",
+              "description": "CCRCFAIL flag clear bit",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DCRCFAILC",
+              "description": "DCRCFAIL flag clear bit",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CTIMEOUTC",
+              "description": "CTIMEOUT flag clear bit",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DTIMEOUTC",
+              "description": "DTIMEOUT flag clear bit",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "TXUNDERRC",
+              "description": "TXUNDERR flag clear bit",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "RXOVERRC",
+              "description": "RXOVERR flag clear bit",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CMDRENDC",
+              "description": "CMDREND flag clear bit",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CMDSENTC",
+              "description": "CMDSENT flag clear bit",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "DATAENDC",
+              "description": "DATAEND flag clear bit",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "STBITERRC",
+              "description": "STBITERR flag clear bit",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "DBCKENDC",
+              "description": "DBCKEND flag clear bit",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "SDIOITC",
+              "description": "SDIOIT flag clear bit",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "CEATAENDC",
+              "description": "CEATAEND flag clear bit",
+              "offset": 23,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "MASK",
+          "displayName": "MASK",
+          "description": "SDIO mask register (SDIO_MASK)",
+          "addressOffset": "0x003C",
+          "absoluteAddress": "0x4001803C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CCRCFAILIE",
+              "description": "Command CRC fail interrupt enable",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DCRCFAILIE",
+              "description": "Data CRC fail interrupt enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CTIMEOUTIE",
+              "description": "Command timeout interrupt enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "DTIMEOUTIE",
+              "description": "Data timeout interrupt enable",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "TXUNDERRIE",
+              "description": "Tx FIFO underrun error interrupt enable",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "RXOVERRIE",
+              "description": "Rx FIFO overrun error interrupt enable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "CMDRENDIE",
+              "description": "Command response received interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "CMDSENTIE",
+              "description": "Command sent interrupt enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "DATAENDIE",
+              "description": "Data end interrupt enable",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "STBITERRIE",
+              "description": "Start bit error interrupt enable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "DBACKENDIE",
+              "description": "Data block end interrupt enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "CMDACTIE",
+              "description": "Command acting interrupt enable",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "TXACTIE",
+              "description": "Data transmit acting interrupt enable",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "RXACTIE",
+              "description": "Data receive acting interrupt enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOHEIE",
+              "description": "Tx FIFO half empty interrupt enable",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOHFIE",
+              "description": "Rx FIFO half full interrupt enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOFIE",
+              "description": "Tx FIFO full interrupt enable",
+              "offset": 16,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOFIE",
+              "description": "Rx FIFO full interrupt enable",
+              "offset": 17,
+              "width": 1
+            },
+            {
+              "name": "TXFIFOEIE",
+              "description": "Tx FIFO empty interrupt enable",
+              "offset": 18,
+              "width": 1
+            },
+            {
+              "name": "RXFIFOEIE",
+              "description": "Rx FIFO empty interrupt enable",
+              "offset": 19,
+              "width": 1
+            },
+            {
+              "name": "TXDAVLIE",
+              "description": "Data available in Tx FIFO interrupt enable",
+              "offset": 20,
+              "width": 1
+            },
+            {
+              "name": "RXDAVLIE",
+              "description": "Data available in Rx FIFO interrupt enable",
+              "offset": 21,
+              "width": 1
+            },
+            {
+              "name": "SDIOITIE",
+              "description": "SDIO mode interrupt received interrupt enable",
+              "offset": 22,
+              "width": 1
+            },
+            {
+              "name": "CEATENDIE",
+              "description": "CE-ATA command completion signal received interrupt enable",
+              "offset": 23,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "FIFOCNT",
+          "displayName": "FIFOCNT",
+          "description": "Bits 23:0 = FIFOCOUNT: Remaining number of words to be written to or read from the FIFO",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0x40018048",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "FIF0COUNT",
+              "description": "Remaining number of words to be written to or read from the FIFO",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "FIFO",
+          "displayName": "FIFO",
+          "description": "bits 31:0 = FIFOData: Receive and transmit FIFO data",
+          "addressOffset": "0x0080",
+          "absoluteAddress": "0x40018080",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "FIFOData",
+              "description": "Receive and transmit FIFO data",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

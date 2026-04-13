@@ -1,0 +1,62 @@
+#pragma once
+
+#include "types.h"
+
+typedef struct {
+    io_ro_32 INTFR;
+    io_wo_32 INTFCR;
+    io_rw_32 CFGR1;
+    io_rw_32 CNTR1;
+    io_rw_32 PADDR1;
+    io_rw_32 MADDR1;
+    uint8_t _reserved_0[0x4];
+    io_rw_32 CFGR2;
+    io_rw_32 CNTR2;
+    io_rw_32 PADDR2;
+    io_rw_32 MADDR2;
+    uint8_t _reserved_1[0x4];
+    io_rw_32 CFGR3;
+    io_rw_32 CNTR3;
+    io_rw_32 PADDR3;
+    io_rw_32 MADDR3;
+    uint8_t _reserved_2[0x4];
+    io_rw_32 CFGR4;
+    io_rw_32 CNTR4;
+    io_rw_32 PADDR4;
+    io_rw_32 MADDR4;
+    uint8_t _reserved_3[0x4];
+    io_rw_32 CFGR5;
+    io_rw_32 CNTR5;
+    io_rw_32 PADDR5;
+    io_rw_32 MADDR5;
+    uint8_t _reserved_4[0x4];
+    io_rw_32 CFGR6;
+    io_rw_32 CNTR6;
+    io_rw_32 PADDR6;
+    io_rw_32 MADDR6;
+    uint8_t _reserved_5[0x4];
+    io_rw_32 CFGR7;
+    io_rw_32 CNTR7;
+    io_rw_32 PADDR7;
+    io_rw_32 MADDR7;
+    io_rw_32 CFGR8;
+    io_rw_32 CNTR8;
+    io_rw_32 PADDR8;
+    io_rw_32 MADDR8;
+    io_rw_32 CFGR9;
+    io_rw_32 CNTR9;
+    io_rw_32 PADDR9;
+    io_rw_32 MADDR9;
+    io_rw_32 CFGR10;
+    io_rw_32 CNTR10;
+    io_rw_32 PADDR10;
+    io_rw_32 MADDR10;
+    io_rw_32 CFGR11;
+    io_rw_32 CNTR11;
+    io_rw_32 PADDR11;
+    io_rw_32 MADDR11;
+    io_ro_32 EXTEN_INTFR;
+    io_rw_32 EXTEN_INTFCR;
+} DMA2_t;
+
+#define DMA2 ((DMA2_t *)0x40020400)

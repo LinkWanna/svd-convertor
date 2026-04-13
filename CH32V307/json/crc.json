@@ -1,0 +1,73 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "crc",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 3,
+    "fieldCount": 3
+  },
+  "peripherals": [
+    {
+      "name": "CRC",
+      "description": "CRC calculation unit",
+      "groupName": "CRC",
+      "baseAddress": "0x40023000",
+      "registers": [
+        {
+          "name": "DATAR",
+          "displayName": "DATAR",
+          "description": "Data register",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40023000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0xFFFFFFFF",
+          "fields": [
+            {
+              "name": "DR",
+              "description": "Data Register",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IDATAR",
+          "displayName": "IDATAR",
+          "description": "Independent Data register",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40023004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IDR",
+              "description": "Independent Data register",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "CTLR",
+          "displayName": "CTLR",
+          "description": "Control register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40023008",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RESET",
+              "description": "Reset bit",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

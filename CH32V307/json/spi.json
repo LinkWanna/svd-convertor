@@ -1,0 +1,791 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "spi",
+  "summary": {
+    "peripheralCount": 3,
+    "registerCount": 19,
+    "fieldCount": 83
+  },
+  "peripherals": [
+    {
+      "name": "SPI1",
+      "description": "Serial peripheral interface",
+      "groupName": "SPI",
+      "baseAddress": "0x40013000",
+      "interrupts": [
+        {
+          "name": "SPI1",
+          "description": "SPI1 global interrupt",
+          "value": 51
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40013000",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "BIDIMODE",
+              "description": "Bidirectional data mode enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "BIDIOE",
+              "description": "Output enable in bidirectional mode",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "CRCEN",
+              "description": "Hardware CRC calculation enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CRCNEXT",
+              "description": "CRC transfer next",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "DFF",
+              "description": "Data frame format",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "RXONLY",
+              "description": "Receive only",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "SSM",
+              "description": "Software slave management",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "SSI",
+              "description": "Internal slave select",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "LSBFIRST",
+              "description": "Frame format",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "SPE",
+              "description": "SPI enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "BR",
+              "description": "Baud rate control",
+              "offset": 3,
+              "width": 3
+            },
+            {
+              "name": "MSTR",
+              "description": "Master selection",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CPOL",
+              "description": "Clock polarity",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CPHA",
+              "description": "Clock phase",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40013004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TXEIE",
+              "description": "Tx buffer empty interrupt enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "RXNEIE",
+              "description": "RX buffer not empty interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "ERRIE",
+              "description": "Error interrupt enable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "SSOE",
+              "description": "SS output enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TXDMAEN",
+              "description": "Tx buffer DMA enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "RXDMAEN",
+              "description": "Rx buffer DMA enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "STATR",
+          "displayName": "STATR",
+          "description": "status register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40013008",
+          "size": 32,
+          "resetValue": "0x2",
+          "fields": [
+            {
+              "name": "BSY",
+              "description": "Busy flag",
+              "offset": 7,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "OVR",
+              "description": "Overrun flag",
+              "offset": 6,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "MODF",
+              "description": "Mode fault",
+              "offset": 5,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "CRCERR",
+              "description": "CRC error flag",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "UDR",
+              "description": "Underrun flag",
+              "offset": 3,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "CHSID",
+              "description": "Channel side",
+              "offset": 2,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "TXE",
+              "description": "Transmit buffer empty",
+              "offset": 1,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "RXNE",
+              "description": "Receive buffer not empty",
+              "offset": 0,
+              "width": 1,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "DATAR",
+          "displayName": "DATAR",
+          "description": "data register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4001300C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATAR",
+              "description": "Data register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CRCR",
+          "displayName": "CRCR",
+          "description": "CRCR polynomial register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40013010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x7",
+          "fields": [
+            {
+              "name": "CRCPOLY",
+              "description": "CRC polynomial register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "RCRCR",
+          "displayName": "RCRCR",
+          "description": "RX CRC register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40013014",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RXCRC",
+              "description": "Rx CRC register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "TCRCR",
+          "displayName": "TCRCR",
+          "description": "TX CRC register",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40013018",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TXCRC",
+              "description": "Tx CRC register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "SPI_I2S_CFGR",
+          "displayName": "SPI_I2S_CFGR",
+          "description": "SPI_I2S configure register",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4001301C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CHLEN",
+              "description": "Channel length (number of bits per audio channel)",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "DATLEN",
+              "description": "DATLEN[1:0] bits (Data length to be transferred)",
+              "offset": 1,
+              "width": 2
+            },
+            {
+              "name": "CKPOL",
+              "description": "steady state clock polarity",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "I2SSTD",
+              "description": "I2SSTD[1:0] bits (I2S standard selection)",
+              "offset": 4,
+              "width": 2
+            },
+            {
+              "name": "PCMSYNC",
+              "description": "PCM frame synchronization",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "I2SCFG",
+              "description": "I2SCFG[1:0] bits (I2S configuration mode)",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "I2SE",
+              "description": "I2S Enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "I2SMOD",
+              "description": "I2S mode selection",
+              "offset": 11,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "HSCR",
+          "displayName": "HSCR",
+          "description": "high speed control register",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40013024",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HSRXEN",
+              "description": "High speed mode read enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPI2",
+      "description": "Serial peripheral interface",
+      "groupName": "SPI",
+      "baseAddress": "0x40003800",
+      "interrupts": [
+        {
+          "name": "SPI2",
+          "description": "SPI2 global interrupt",
+          "value": 52
+        }
+      ],
+      "registers": [
+        {
+          "name": "CTLR1",
+          "displayName": "CTLR1",
+          "description": "control register 1",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40003800",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "BIDIMODE",
+              "description": "Bidirectional data mode enable",
+              "offset": 15,
+              "width": 1
+            },
+            {
+              "name": "BIDIOE",
+              "description": "Output enable in bidirectional mode",
+              "offset": 14,
+              "width": 1
+            },
+            {
+              "name": "CRCEN",
+              "description": "Hardware CRC calculation enable",
+              "offset": 13,
+              "width": 1
+            },
+            {
+              "name": "CRCNEXT",
+              "description": "CRC transfer next",
+              "offset": 12,
+              "width": 1
+            },
+            {
+              "name": "DFF",
+              "description": "Data frame format",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "RXONLY",
+              "description": "Receive only",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "SSM",
+              "description": "Software slave management",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "SSI",
+              "description": "Internal slave select",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "LSBFIRST",
+              "description": "Frame format",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "SPE",
+              "description": "SPI enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "BR",
+              "description": "Baud rate control",
+              "offset": 3,
+              "width": 3
+            },
+            {
+              "name": "MSTR",
+              "description": "Master selection",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "CPOL",
+              "description": "Clock polarity",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "CPHA",
+              "description": "Clock phase",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "CTLR2",
+          "displayName": "CTLR2",
+          "description": "control register 2",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0x40003804",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TXEIE",
+              "description": "Tx buffer empty interrupt enable",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "RXNEIE",
+              "description": "RX buffer not empty interrupt enable",
+              "offset": 6,
+              "width": 1
+            },
+            {
+              "name": "ERRIE",
+              "description": "Error interrupt enable",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "SSOE",
+              "description": "SS output enable",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "TXDMAEN",
+              "description": "Tx buffer DMA enable",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "RXDMAEN",
+              "description": "Rx buffer DMA enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "STATR",
+          "displayName": "STATR",
+          "description": "status register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0x40003808",
+          "size": 32,
+          "resetValue": "0x2",
+          "fields": [
+            {
+              "name": "BSY",
+              "description": "Busy flag",
+              "offset": 7,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "OVR",
+              "description": "Overrun flag",
+              "offset": 6,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "MODF",
+              "description": "Mode fault",
+              "offset": 5,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "CRCERR",
+              "description": "CRC error flag",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "TXE",
+              "description": "Transmit buffer empty",
+              "offset": 1,
+              "width": 1,
+              "access": "read-only"
+            },
+            {
+              "name": "RXNE",
+              "description": "Receive buffer not empty",
+              "offset": 0,
+              "width": 1,
+              "access": "read-only"
+            }
+          ]
+        },
+        {
+          "name": "DATAR",
+          "displayName": "DATAR",
+          "description": "data register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0x4000380C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "DATAR",
+              "description": "Data register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "CRCR",
+          "displayName": "CRCR",
+          "description": "CRCR polynomial register",
+          "addressOffset": "0x0010",
+          "absoluteAddress": "0x40003810",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x7",
+          "fields": [
+            {
+              "name": "CRCPOLY",
+              "description": "CRC polynomial register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "RCRCR",
+          "displayName": "RCRCR",
+          "description": "RX CRC register",
+          "addressOffset": "0x0014",
+          "absoluteAddress": "0x40003814",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RXCRC",
+              "description": "Rx CRC register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "TCRCR",
+          "displayName": "TCRCR",
+          "description": "TX CRC register",
+          "addressOffset": "0x0018",
+          "absoluteAddress": "0x40003818",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "TXCRC",
+              "description": "Tx CRC register",
+              "offset": 0,
+              "width": 16
+            }
+          ]
+        },
+        {
+          "name": "I2SCFGR",
+          "displayName": "I2SCFGR",
+          "description": "I2S configuration register",
+          "addressOffset": "0x001C",
+          "absoluteAddress": "0x4000381C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "I2SMOD",
+              "description": "I2S mode selection",
+              "offset": 11,
+              "width": 1
+            },
+            {
+              "name": "I2SE",
+              "description": "I2S Enable",
+              "offset": 10,
+              "width": 1
+            },
+            {
+              "name": "I2SCFG",
+              "description": "I2S configuration mode",
+              "offset": 8,
+              "width": 2
+            },
+            {
+              "name": "PCMSYNC",
+              "description": "PCM frame synchronization",
+              "offset": 7,
+              "width": 1
+            },
+            {
+              "name": "I2SSTD",
+              "description": "I2S standard selection",
+              "offset": 4,
+              "width": 2
+            },
+            {
+              "name": "CKPOL",
+              "description": "Steady state clock polarity",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "DATLEN",
+              "description": "Data length to be transferred",
+              "offset": 1,
+              "width": 2
+            },
+            {
+              "name": "CHLEN",
+              "description": "Channel length (number of bits per audio channel)",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "I2SPR",
+          "displayName": "I2SPR",
+          "description": "I2S prescaler register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0x40003820",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x10",
+          "fields": [
+            {
+              "name": "MCKOE",
+              "description": "Master clock output enable",
+              "offset": 9,
+              "width": 1
+            },
+            {
+              "name": "ODD",
+              "description": "Odd factor for the prescaler",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "I2SDIV",
+              "description": "I2S Linear prescaler",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "HSCR",
+          "displayName": "HSCR",
+          "description": "high speed control register",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0x40003824",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "HSRXEN",
+              "description": "High speed mode read enable",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPI3",
+      "derivedFrom": "SPI2",
+      "baseAddress": "0x40003C00",
+      "interrupts": [
+        {
+          "name": "SPI3",
+          "description": "SPI3 global interrupt",
+          "value": 67
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "extend",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 1,
+    "fieldCount": 10
+  },
+  "peripherals": [
+    {
+      "name": "EXTEND",
+      "description": "Extend configuration",
+      "groupName": "EXTEND",
+      "baseAddress": "0x40023800",
+      "registers": [
+        {
+          "name": "EXTEND_CTR",
+          "displayName": "EXTEND",
+          "description": "EXTEND register",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0x40023800",
+          "size": 32,
+          "resetValue": "0xA00",
+          "fields": [
+            {
+              "name": "USBDLS",
+              "description": "USBD Lowspeed Enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "USBDPU",
+              "description": "USBD pullup Enable",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "ETH_10M_EN",
+              "description": "ETH 10M Enable",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "ETH_RGMII_EN",
+              "description": "ETH RGMII Enable",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "PLL_HSI_PRE",
+              "description": "Whether HSI is divided",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "LOCKUP_EN",
+              "description": "LOCKUP_Eable",
+              "offset": 6,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "LOCKUP_RSTF",
+              "description": "LOCKUP RESET",
+              "offset": 7,
+              "width": 1,
+              "access": "read/clear"
+            },
+            {
+              "name": "ULLDO_TRIM",
+              "description": "ULLDO_TRIM",
+              "offset": 8,
+              "width": 2,
+              "access": "read-write"
+            },
+            {
+              "name": "LDO_TRIM",
+              "description": "LDO_TRIM",
+              "offset": 10,
+              "width": 2,
+              "access": "read-write"
+            },
+            {
+              "name": "HSE_KEEP_LP",
+              "description": "HSE_KEEP_LP",
+              "offset": 12,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3511 @@
+{
+  "chip": "CH32V30xxx",
+  "group": "pfic",
+  "summary": {
+    "peripheralCount": 1,
+    "registerCount": 299,
+    "fieldCount": 69
+  },
+  "peripherals": [
+    {
+      "name": "PFIC",
+      "description": "Programmable Fast Interrupt Controller",
+      "groupName": "PFIC",
+      "baseAddress": "0xE000E000",
+      "registers": [
+        {
+          "name": "ISR1",
+          "displayName": "ISR1",
+          "description": "Interrupt Status Register",
+          "addressOffset": "0x0000",
+          "absoluteAddress": "0xE000E000",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0xC",
+          "fields": [
+            {
+              "name": "INTENSTA2_3",
+              "description": "Interrupt ID Status",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "INTENSTA12_31",
+              "description": "Interrupt ID Status",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "ISR2",
+          "displayName": "ISR2",
+          "description": "Interrupt Status Register",
+          "addressOffset": "0x0004",
+          "absoluteAddress": "0xE000E004",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTENSTA",
+              "description": "Interrupt ID Status",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "ISR3",
+          "displayName": "ISR3",
+          "description": "Interrupt Status Register",
+          "addressOffset": "0x0008",
+          "absoluteAddress": "0xE000E008",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTENSTA",
+              "description": "Interrupt ID Status",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "ISR4",
+          "displayName": "ISR4",
+          "description": "Interrupt Status Register",
+          "addressOffset": "0x000C",
+          "absoluteAddress": "0xE000E00C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTENSTA",
+              "description": "Interrupt ID Status",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IPR1",
+          "displayName": "IPR1",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0020",
+          "absoluteAddress": "0xE000E020",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSTA2_3",
+              "description": "PENDSTA",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "PENDSTA12_31",
+              "description": "PENDSTA",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IPR2",
+          "displayName": "IPR2",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0024",
+          "absoluteAddress": "0xE000E024",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSTA",
+              "description": "PENDSTA",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPR3",
+          "displayName": "IPR3",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0028",
+          "absoluteAddress": "0xE000E028",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSTA",
+              "description": "PENDSTA",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPR4",
+          "displayName": "IPR4",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x002C",
+          "absoluteAddress": "0xE000E02C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSTA",
+              "description": "PENDSTA",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "ITHRESDR",
+          "displayName": "ITHRESDR",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0040",
+          "absoluteAddress": "0xE000E040",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "THRESHOLD",
+              "description": "THRESHOLD",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "CFGR",
+          "displayName": "CFGR",
+          "description": "Interrupt Config Register",
+          "addressOffset": "0x0048",
+          "absoluteAddress": "0xE000E048",
+          "size": 32,
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "RESETSYS",
+              "description": "RESETSYS",
+              "offset": 7,
+              "width": 1,
+              "access": "write-only"
+            },
+            {
+              "name": "KEYCODE",
+              "description": "KEYCODE",
+              "offset": 16,
+              "width": 16,
+              "access": "write-only"
+            }
+          ]
+        },
+        {
+          "name": "GISR",
+          "displayName": "GISR",
+          "description": "Interrupt Global Register",
+          "addressOffset": "0x004C",
+          "absoluteAddress": "0xE000E04C",
+          "size": 32,
+          "access": "read-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "NESTSTA",
+              "description": "NESTSTA",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "GACTSTA",
+              "description": "GACTSTA",
+              "offset": 8,
+              "width": 1
+            },
+            {
+              "name": "GPENDSTA",
+              "description": "GPENDSTA",
+              "offset": 9,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "VTFIDR",
+          "displayName": "VTFIDR",
+          "description": "ID Config Register",
+          "addressOffset": "0x0050",
+          "absoluteAddress": "0xE000E050",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VTFID0",
+              "description": "VTFID0",
+              "offset": 0,
+              "width": 8
+            },
+            {
+              "name": "VTFID1",
+              "description": "VTFID1",
+              "offset": 8,
+              "width": 8
+            },
+            {
+              "name": "VTFID2",
+              "description": "VTFID2",
+              "offset": 16,
+              "width": 8
+            },
+            {
+              "name": "VTFID3",
+              "description": "VTFID3",
+              "offset": 24,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "VTFADDRR0",
+          "displayName": "VTFADDRR0",
+          "description": "Interrupt 0 address Register",
+          "addressOffset": "0x0060",
+          "absoluteAddress": "0xE000E060",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VTF0EN",
+              "description": "VTF0EN",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "ADDR0",
+              "description": "ADDR0",
+              "offset": 1,
+              "width": 31
+            }
+          ]
+        },
+        {
+          "name": "VTFADDRR1",
+          "displayName": "VTFADDRR1",
+          "description": "Interrupt 1 address Register",
+          "addressOffset": "0x0064",
+          "absoluteAddress": "0xE000E064",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VTF1EN",
+              "description": "VTF1EN",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "ADDR1",
+              "description": "ADDR1",
+              "offset": 1,
+              "width": 31
+            }
+          ]
+        },
+        {
+          "name": "VTFADDRR2",
+          "displayName": "VTFADDRR2",
+          "description": "Interrupt 2 address Register",
+          "addressOffset": "0x0068",
+          "absoluteAddress": "0xE000E068",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VTF2EN",
+              "description": "VTF2EN",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "ADDR2",
+              "description": "ADDR2",
+              "offset": 1,
+              "width": 31
+            }
+          ]
+        },
+        {
+          "name": "VTFADDRR3",
+          "displayName": "VTFADDRR3",
+          "description": "Interrupt 3 address Register",
+          "addressOffset": "0x006C",
+          "absoluteAddress": "0xE000E06C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "VTF3EN",
+              "description": "VTF3EN",
+              "offset": 0,
+              "width": 1
+            },
+            {
+              "name": "ADDR3",
+              "description": "ADDR3",
+              "offset": 1,
+              "width": 31
+            }
+          ]
+        },
+        {
+          "name": "IENR1",
+          "displayName": "IENR1",
+          "description": "Interrupt Setting Register",
+          "addressOffset": "0x0100",
+          "absoluteAddress": "0xE000E100",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTEN",
+              "description": "INTEN",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IENR2",
+          "displayName": "IENR2",
+          "description": "Interrupt Setting Register",
+          "addressOffset": "0x0104",
+          "absoluteAddress": "0xE000E104",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTEN",
+              "description": "INTEN",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IENR3",
+          "displayName": "IENR3",
+          "description": "Interrupt Setting Register",
+          "addressOffset": "0x0108",
+          "absoluteAddress": "0xE000E108",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTEN",
+              "description": "INTEN",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IENR4",
+          "displayName": "IENR4",
+          "description": "Interrupt Setting Register",
+          "addressOffset": "0x010C",
+          "absoluteAddress": "0xE000E10C",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTEN",
+              "description": "INTEN",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IRER1",
+          "displayName": "IRER1",
+          "description": "Interrupt Clear Register",
+          "addressOffset": "0x0180",
+          "absoluteAddress": "0xE000E180",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTRSET",
+              "description": "INTRSET",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IRER2",
+          "displayName": "IRER2",
+          "description": "Interrupt Clear Register",
+          "addressOffset": "0x0184",
+          "absoluteAddress": "0xE000E184",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTRSET",
+              "description": "INTRSET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IRER3",
+          "displayName": "IRER3",
+          "description": "Interrupt Clear Register",
+          "addressOffset": "0x0188",
+          "absoluteAddress": "0xE000E188",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTRSET",
+              "description": "INTRSET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IRER4",
+          "displayName": "IRER4",
+          "description": "Interrupt Clear Register",
+          "addressOffset": "0x018C",
+          "absoluteAddress": "0xE000E18C",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "INTRSET",
+              "description": "INTRSET",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IPSR1",
+          "displayName": "IPSR1",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0200",
+          "absoluteAddress": "0xE000E200",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSET2_3",
+              "description": "PENDSET",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "PENDSET12_31",
+              "description": "PENDSET",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IPSR2",
+          "displayName": "IPSR2",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0204",
+          "absoluteAddress": "0xE000E204",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSET",
+              "description": "PENDSET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPSR3",
+          "displayName": "IPSR3",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x0208",
+          "absoluteAddress": "0xE000E208",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSET",
+              "description": "PENDSET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPSR4",
+          "displayName": "IPSR4",
+          "description": "Interrupt Pending Register",
+          "addressOffset": "0x020C",
+          "absoluteAddress": "0xE000E20C",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDSET",
+              "description": "PENDSET",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IPRR1",
+          "displayName": "IPRR1",
+          "description": "Interrupt Pending Clear Register",
+          "addressOffset": "0x0280",
+          "absoluteAddress": "0xE000E280",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDRESET2_3",
+              "description": "PENDRESET",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "PENDRESET12_31",
+              "description": "PENDRESET",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IPRR2",
+          "displayName": "IPRR2",
+          "description": "Interrupt Pending Clear Register",
+          "addressOffset": "0x0284",
+          "absoluteAddress": "0xE000E284",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDRESET",
+              "description": "PENDRESET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPRR3",
+          "displayName": "IPRR3",
+          "description": "Interrupt Pending Clear Register",
+          "addressOffset": "0x0288",
+          "absoluteAddress": "0xE000E288",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDRESET",
+              "description": "PENDRESET",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IPRR4",
+          "displayName": "IPRR4",
+          "description": "Interrupt Pending Clear Register",
+          "addressOffset": "0x028C",
+          "absoluteAddress": "0xE000E28C",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "PENDRESET",
+              "description": "PENDRESET",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IACTR1",
+          "displayName": "IACTR1",
+          "description": "Interrupt ACTIVE Register",
+          "addressOffset": "0x0300",
+          "absoluteAddress": "0xE000E300",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IACTS2_3",
+              "description": "IACTS",
+              "offset": 2,
+              "width": 2
+            },
+            {
+              "name": "IACTS12_31",
+              "description": "IACTS",
+              "offset": 12,
+              "width": 20
+            }
+          ]
+        },
+        {
+          "name": "IACTR2",
+          "displayName": "IACTR2",
+          "description": "Interrupt ACTIVE Register",
+          "addressOffset": "0x0304",
+          "absoluteAddress": "0xE000E304",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IACTS",
+              "description": "IACTS",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IACTR3",
+          "displayName": "IACTR3",
+          "description": "Interrupt ACTIVE Register",
+          "addressOffset": "0x0308",
+          "absoluteAddress": "0xE000E308",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IACTS",
+              "description": "IACTS",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "IACTR4",
+          "displayName": "IACTR4",
+          "description": "Interrupt ACTIVE Register",
+          "addressOffset": "0x030C",
+          "absoluteAddress": "0xE000E30C",
+          "size": 32,
+          "access": "write-only",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "IACTS",
+              "description": "IACTS",
+              "offset": 0,
+              "width": 8
+            }
+          ]
+        },
+        {
+          "name": "IPRIOR0",
+          "displayName": "IPRIOR0",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0400",
+          "absoluteAddress": "0xE000E400",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR1",
+          "displayName": "IPRIOR1",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0401",
+          "absoluteAddress": "0xE000E401",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR2",
+          "displayName": "IPRIOR2",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0402",
+          "absoluteAddress": "0xE000E402",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR3",
+          "displayName": "IPRIOR3",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0403",
+          "absoluteAddress": "0xE000E403",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR4",
+          "displayName": "IPRIOR4",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0404",
+          "absoluteAddress": "0xE000E404",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR5",
+          "displayName": "IPRIOR5",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0405",
+          "absoluteAddress": "0xE000E405",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR6",
+          "displayName": "IPRIOR6",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0406",
+          "absoluteAddress": "0xE000E406",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR7",
+          "displayName": "IPRIOR7",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0407",
+          "absoluteAddress": "0xE000E407",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR8",
+          "displayName": "IPRIOR8",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0408",
+          "absoluteAddress": "0xE000E408",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR9",
+          "displayName": "IPRIOR9",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0409",
+          "absoluteAddress": "0xE000E409",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR10",
+          "displayName": "IPRIOR10",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040A",
+          "absoluteAddress": "0xE000E40A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR11",
+          "displayName": "IPRIOR11",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040B",
+          "absoluteAddress": "0xE000E40B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR12",
+          "displayName": "IPRIOR12",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040C",
+          "absoluteAddress": "0xE000E40C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR13",
+          "displayName": "IPRIOR13",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040D",
+          "absoluteAddress": "0xE000E40D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR14",
+          "displayName": "IPRIOR14",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040E",
+          "absoluteAddress": "0xE000E40E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR15",
+          "displayName": "IPRIOR15",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x040F",
+          "absoluteAddress": "0xE000E40F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR16",
+          "displayName": "IPRIOR6",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0410",
+          "absoluteAddress": "0xE000E410",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR17",
+          "displayName": "IPRIOR7",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0411",
+          "absoluteAddress": "0xE000E411",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR18",
+          "displayName": "IPRIOR8",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0412",
+          "absoluteAddress": "0xE000E412",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR19",
+          "displayName": "IPRIOR9",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0413",
+          "absoluteAddress": "0xE000E413",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR20",
+          "displayName": "IPRIOR20",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0414",
+          "absoluteAddress": "0xE000E414",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR21",
+          "displayName": "IPRIOR21",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0415",
+          "absoluteAddress": "0xE000E415",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR22",
+          "displayName": "IPRIOR22",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0416",
+          "absoluteAddress": "0xE000E416",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR23",
+          "displayName": "IPRIOR23",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0417",
+          "absoluteAddress": "0xE000E417",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR24",
+          "displayName": "IPRIOR24",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0418",
+          "absoluteAddress": "0xE000E418",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR25",
+          "displayName": "IPRIOR25",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0419",
+          "absoluteAddress": "0xE000E419",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR26",
+          "displayName": "IPRIOR26",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041A",
+          "absoluteAddress": "0xE000E41A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR27",
+          "displayName": "IPRIOR27",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041B",
+          "absoluteAddress": "0xE000E41B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR28",
+          "displayName": "IPRIOR28",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041C",
+          "absoluteAddress": "0xE000E41C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR29",
+          "displayName": "IPRIOR29",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041D",
+          "absoluteAddress": "0xE000E41D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR30",
+          "displayName": "IPRIOR30",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041E",
+          "absoluteAddress": "0xE000E41E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR31",
+          "displayName": "IPRIOR31",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x041F",
+          "absoluteAddress": "0xE000E41F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR32",
+          "displayName": "IPRIOR32",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0420",
+          "absoluteAddress": "0xE000E420",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR33",
+          "displayName": "IPRIOR33",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0421",
+          "absoluteAddress": "0xE000E421",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR34",
+          "displayName": "IPRIOR34",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0422",
+          "absoluteAddress": "0xE000E422",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR35",
+          "displayName": "IPRIOR35",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0423",
+          "absoluteAddress": "0xE000E423",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR36",
+          "displayName": "IPRIOR36",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0424",
+          "absoluteAddress": "0xE000E424",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR37",
+          "displayName": "IPRIOR37",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0425",
+          "absoluteAddress": "0xE000E425",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR38",
+          "displayName": "IPRIOR38",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0426",
+          "absoluteAddress": "0xE000E426",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR39",
+          "displayName": "IPRIOR39",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0427",
+          "absoluteAddress": "0xE000E427",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR40",
+          "displayName": "IPRIOR40",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0428",
+          "absoluteAddress": "0xE000E428",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR41",
+          "displayName": "IPRIOR41",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0429",
+          "absoluteAddress": "0xE000E429",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR42",
+          "displayName": "IPRIOR42",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042A",
+          "absoluteAddress": "0xE000E42A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR43",
+          "displayName": "IPRIOR43",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042B",
+          "absoluteAddress": "0xE000E42B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR44",
+          "displayName": "IPRIOR44",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042C",
+          "absoluteAddress": "0xE000E42C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR45",
+          "displayName": "IPRIOR45",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042D",
+          "absoluteAddress": "0xE000E42D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR46",
+          "displayName": "IPRIOR46",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042E",
+          "absoluteAddress": "0xE000E42E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR47",
+          "displayName": "IPRIOR47",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x042F",
+          "absoluteAddress": "0xE000E42F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR48",
+          "displayName": "IPRIOR48",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0430",
+          "absoluteAddress": "0xE000E430",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR49",
+          "displayName": "IPRIOR49",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0431",
+          "absoluteAddress": "0xE000E431",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR50",
+          "displayName": "IPRIOR50",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0432",
+          "absoluteAddress": "0xE000E432",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR51",
+          "displayName": "IPRIOR51",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0433",
+          "absoluteAddress": "0xE000E433",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR52",
+          "displayName": "IPRIOR52",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0434",
+          "absoluteAddress": "0xE000E434",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR53",
+          "displayName": "IPRIOR53",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0435",
+          "absoluteAddress": "0xE000E435",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR54",
+          "displayName": "IPRIOR54",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0436",
+          "absoluteAddress": "0xE000E436",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR55",
+          "displayName": "IPRIOR55",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0437",
+          "absoluteAddress": "0xE000E437",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR56",
+          "displayName": "IPRIOR56",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0438",
+          "absoluteAddress": "0xE000E438",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR57",
+          "displayName": "IPRIOR57",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0439",
+          "absoluteAddress": "0xE000E439",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR58",
+          "displayName": "IPRIOR58",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043A",
+          "absoluteAddress": "0xE000E43A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR59",
+          "displayName": "IPRIOR59",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043B",
+          "absoluteAddress": "0xE000E43B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR60",
+          "displayName": "IPRIOR60",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043C",
+          "absoluteAddress": "0xE000E43C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR61",
+          "displayName": "IPRIOR61",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043D",
+          "absoluteAddress": "0xE000E43D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR62",
+          "displayName": "IPRIOR62",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043E",
+          "absoluteAddress": "0xE000E43E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR63",
+          "displayName": "IPRIOR63",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x043F",
+          "absoluteAddress": "0xE000E43F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR64",
+          "displayName": "IPRIOR64",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0440",
+          "absoluteAddress": "0xE000E440",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR65",
+          "displayName": "IPRIOR65",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0441",
+          "absoluteAddress": "0xE000E441",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR66",
+          "displayName": "IPRIOR66",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0442",
+          "absoluteAddress": "0xE000E442",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR67",
+          "displayName": "IPRIOR67",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0443",
+          "absoluteAddress": "0xE000E443",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR68",
+          "displayName": "IPRIOR68",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0444",
+          "absoluteAddress": "0xE000E444",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR69",
+          "displayName": "IPRIOR69",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0445",
+          "absoluteAddress": "0xE000E445",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR70",
+          "displayName": "IPRIOR70",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0446",
+          "absoluteAddress": "0xE000E446",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR71",
+          "displayName": "IPRIOR71",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0447",
+          "absoluteAddress": "0xE000E447",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR72",
+          "displayName": "IPRIOR72",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0448",
+          "absoluteAddress": "0xE000E448",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR73",
+          "displayName": "IPRIOR73",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0449",
+          "absoluteAddress": "0xE000E449",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR74",
+          "displayName": "IPRIOR74",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044A",
+          "absoluteAddress": "0xE000E44A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR75",
+          "displayName": "IPRIOR75",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044B",
+          "absoluteAddress": "0xE000E44B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR76",
+          "displayName": "IPRIOR76",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044C",
+          "absoluteAddress": "0xE000E44C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR77",
+          "displayName": "IPRIOR77",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044D",
+          "absoluteAddress": "0xE000E44D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR78",
+          "displayName": "IPRIOR78",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044E",
+          "absoluteAddress": "0xE000E44E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR79",
+          "displayName": "IPRIOR79",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x044F",
+          "absoluteAddress": "0xE000E44F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR80",
+          "displayName": "IPRIOR80",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0450",
+          "absoluteAddress": "0xE000E450",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR81",
+          "displayName": "IPRIOR81",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0451",
+          "absoluteAddress": "0xE000E451",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR82",
+          "displayName": "IPRIOR82",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0452",
+          "absoluteAddress": "0xE000E452",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR83",
+          "displayName": "IPRIOR83",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0453",
+          "absoluteAddress": "0xE000E453",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR84",
+          "displayName": "IPRIOR84",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0454",
+          "absoluteAddress": "0xE000E454",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR85",
+          "displayName": "IPRIOR85",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0455",
+          "absoluteAddress": "0xE000E455",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR86",
+          "displayName": "IPRIOR86",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0456",
+          "absoluteAddress": "0xE000E456",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR87",
+          "displayName": "IPRIOR87",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0457",
+          "absoluteAddress": "0xE000E457",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR88",
+          "displayName": "IPRIOR88",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0458",
+          "absoluteAddress": "0xE000E458",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR89",
+          "displayName": "IPRIOR89",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0459",
+          "absoluteAddress": "0xE000E459",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR90",
+          "displayName": "IPRIOR90",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045A",
+          "absoluteAddress": "0xE000E45A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR91",
+          "displayName": "IPRIOR91",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045B",
+          "absoluteAddress": "0xE000E45B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR92",
+          "displayName": "IPRIOR92",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045C",
+          "absoluteAddress": "0xE000E45C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR93",
+          "displayName": "IPRIOR93",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045D",
+          "absoluteAddress": "0xE000E45D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR94",
+          "displayName": "IPRIOR94",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045E",
+          "absoluteAddress": "0xE000E45E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR95",
+          "displayName": "IPRIOR95",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x045F",
+          "absoluteAddress": "0xE000E45F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR96",
+          "displayName": "IPRIOR96",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0460",
+          "absoluteAddress": "0xE000E460",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR97",
+          "displayName": "IPRIOR97",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0461",
+          "absoluteAddress": "0xE000E461",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR98",
+          "displayName": "IPRIOR98",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0462",
+          "absoluteAddress": "0xE000E462",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR99",
+          "displayName": "IPRIOR99",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0463",
+          "absoluteAddress": "0xE000E463",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR100",
+          "displayName": "IPRIOR100",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0464",
+          "absoluteAddress": "0xE000E464",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR101",
+          "displayName": "IPRIOR101",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0465",
+          "absoluteAddress": "0xE000E465",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR102",
+          "displayName": "IPRIOR102",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0466",
+          "absoluteAddress": "0xE000E466",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR103",
+          "displayName": "IPRIOR103",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0467",
+          "absoluteAddress": "0xE000E467",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR104",
+          "displayName": "IPRIOR104",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0468",
+          "absoluteAddress": "0xE000E468",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR105",
+          "displayName": "IPRIOR105",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0469",
+          "absoluteAddress": "0xE000E469",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR106",
+          "displayName": "IPRIOR106",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046A",
+          "absoluteAddress": "0xE000E46A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR107",
+          "displayName": "IPRIOR107",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046B",
+          "absoluteAddress": "0xE000E46B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR108",
+          "displayName": "IPRIOR108",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046C",
+          "absoluteAddress": "0xE000E46C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR109",
+          "displayName": "IPRIOR109",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046D",
+          "absoluteAddress": "0xE000E46D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR110",
+          "displayName": "IPRIOR110",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046E",
+          "absoluteAddress": "0xE000E46E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR111",
+          "displayName": "IPRIOR111",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x046F",
+          "absoluteAddress": "0xE000E46F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR112",
+          "displayName": "IPRIOR112",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0470",
+          "absoluteAddress": "0xE000E470",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR113",
+          "displayName": "IPRIOR113",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0471",
+          "absoluteAddress": "0xE000E471",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR114",
+          "displayName": "IPRIOR114",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0472",
+          "absoluteAddress": "0xE000E472",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR115",
+          "displayName": "IPRIOR115",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0473",
+          "absoluteAddress": "0xE000E473",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR116",
+          "displayName": "IPRIOR16",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0474",
+          "absoluteAddress": "0xE000E474",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR117",
+          "displayName": "IPRIOR17",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0475",
+          "absoluteAddress": "0xE000E475",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR118",
+          "displayName": "IPRIOR18",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0476",
+          "absoluteAddress": "0xE000E476",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR119",
+          "displayName": "IPRIOR19",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0477",
+          "absoluteAddress": "0xE000E477",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR120",
+          "displayName": "IPRIOR120",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0478",
+          "absoluteAddress": "0xE000E478",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR121",
+          "displayName": "IPRIOR121",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0479",
+          "absoluteAddress": "0xE000E479",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR122",
+          "displayName": "IPRIOR122",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047A",
+          "absoluteAddress": "0xE000E47A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR123",
+          "displayName": "IPRIOR123",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047B",
+          "absoluteAddress": "0xE000E47B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR124",
+          "displayName": "IPRIOR124",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047C",
+          "absoluteAddress": "0xE000E47C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR125",
+          "displayName": "IPRIOR125",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047D",
+          "absoluteAddress": "0xE000E47D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR126",
+          "displayName": "IPRIOR126",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047E",
+          "absoluteAddress": "0xE000E47E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR127",
+          "displayName": "IPRIOR127",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x047F",
+          "absoluteAddress": "0xE000E47F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR128",
+          "displayName": "IPRIOR128",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0480",
+          "absoluteAddress": "0xE000E480",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR129",
+          "displayName": "IPRIOR129",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0481",
+          "absoluteAddress": "0xE000E481",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR130",
+          "displayName": "IPRIOR130",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0482",
+          "absoluteAddress": "0xE000E482",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR131",
+          "displayName": "IPRIOR131",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0483",
+          "absoluteAddress": "0xE000E483",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR132",
+          "displayName": "IPRIOR132",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0484",
+          "absoluteAddress": "0xE000E484",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR133",
+          "displayName": "IPRIOR133",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0485",
+          "absoluteAddress": "0xE000E485",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR134",
+          "displayName": "IPRIOR134",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0486",
+          "absoluteAddress": "0xE000E486",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR135",
+          "displayName": "IPRIOR135",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0487",
+          "absoluteAddress": "0xE000E487",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR136",
+          "displayName": "IPRIOR136",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0488",
+          "absoluteAddress": "0xE000E488",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR137",
+          "displayName": "IPRIOR137",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0489",
+          "absoluteAddress": "0xE000E489",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR138",
+          "displayName": "IPRIOR138",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048A",
+          "absoluteAddress": "0xE000E48A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR139",
+          "displayName": "IPRIOR139",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048B",
+          "absoluteAddress": "0xE000E48B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR140",
+          "displayName": "IPRIOR140",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048C",
+          "absoluteAddress": "0xE000E48C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR141",
+          "displayName": "IPRIOR141",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048D",
+          "absoluteAddress": "0xE000E48D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR142",
+          "displayName": "IPRIOR142",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048E",
+          "absoluteAddress": "0xE000E48E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR143",
+          "displayName": "IPRIOR143",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x048F",
+          "absoluteAddress": "0xE000E48F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR144",
+          "displayName": "IPRIOR144",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0490",
+          "absoluteAddress": "0xE000E490",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR145",
+          "displayName": "IPRIOR145",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0491",
+          "absoluteAddress": "0xE000E491",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR146",
+          "displayName": "IPRIOR146",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0492",
+          "absoluteAddress": "0xE000E492",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR147",
+          "displayName": "IPRIOR147",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0493",
+          "absoluteAddress": "0xE000E493",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR148",
+          "displayName": "IPRIOR148",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0494",
+          "absoluteAddress": "0xE000E494",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR149",
+          "displayName": "IPRIOR149",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0495",
+          "absoluteAddress": "0xE000E495",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR150",
+          "displayName": "IPRIOR150",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0496",
+          "absoluteAddress": "0xE000E496",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR151",
+          "displayName": "IPRIOR151",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0497",
+          "absoluteAddress": "0xE000E497",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR152",
+          "displayName": "IPRIOR152",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0498",
+          "absoluteAddress": "0xE000E498",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR153",
+          "displayName": "IPRIOR153",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x0499",
+          "absoluteAddress": "0xE000E499",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR154",
+          "displayName": "IPRIOR154",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049A",
+          "absoluteAddress": "0xE000E49A",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR155",
+          "displayName": "IPRIOR155",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049B",
+          "absoluteAddress": "0xE000E49B",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR156",
+          "displayName": "IPRIOR156",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049C",
+          "absoluteAddress": "0xE000E49C",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR157",
+          "displayName": "IPRIOR157",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049D",
+          "absoluteAddress": "0xE000E49D",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR158",
+          "displayName": "IPRIOR158",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049E",
+          "absoluteAddress": "0xE000E49E",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR159",
+          "displayName": "IPRIOR159",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x049F",
+          "absoluteAddress": "0xE000E49F",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR160",
+          "displayName": "IPRIOR160",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A0",
+          "absoluteAddress": "0xE000E4A0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR161",
+          "displayName": "IPRIOR161",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A1",
+          "absoluteAddress": "0xE000E4A1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR162",
+          "displayName": "IPRIOR162",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A2",
+          "absoluteAddress": "0xE000E4A2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR163",
+          "displayName": "IPRIOR163",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A3",
+          "absoluteAddress": "0xE000E4A3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR164",
+          "displayName": "IPRIOR164",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A4",
+          "absoluteAddress": "0xE000E4A4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR165",
+          "displayName": "IPRIOR165",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A5",
+          "absoluteAddress": "0xE000E4A5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR166",
+          "displayName": "IPRIOR166",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A6",
+          "absoluteAddress": "0xE000E4A6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR167",
+          "displayName": "IPRIOR167",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A7",
+          "absoluteAddress": "0xE000E4A7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR168",
+          "displayName": "IPRIOR168",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A8",
+          "absoluteAddress": "0xE000E4A8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR169",
+          "displayName": "IPRIOR169",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04A9",
+          "absoluteAddress": "0xE000E4A9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR170",
+          "displayName": "IPRIOR170",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AA",
+          "absoluteAddress": "0xE000E4AA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR171",
+          "displayName": "IPRIOR171",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AB",
+          "absoluteAddress": "0xE000E4AB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR172",
+          "displayName": "IPRIOR172",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AC",
+          "absoluteAddress": "0xE000E4AC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR173",
+          "displayName": "IPRIOR173",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AD",
+          "absoluteAddress": "0xE000E4AD",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR174",
+          "displayName": "IPRIOR174",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AE",
+          "absoluteAddress": "0xE000E4AE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR175",
+          "displayName": "IPRIOR175",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04AF",
+          "absoluteAddress": "0xE000E4AF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR176",
+          "displayName": "IPRIOR176",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B0",
+          "absoluteAddress": "0xE000E4B0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR177",
+          "displayName": "IPRIOR177",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B1",
+          "absoluteAddress": "0xE000E4B1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR178",
+          "displayName": "IPRIOR178",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B2",
+          "absoluteAddress": "0xE000E4B2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR179",
+          "displayName": "IPRIOR179",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B3",
+          "absoluteAddress": "0xE000E4B3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR180",
+          "displayName": "IPRIOR180",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B4",
+          "absoluteAddress": "0xE000E4B4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR181",
+          "displayName": "IPRIOR181",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B5",
+          "absoluteAddress": "0xE000E4B5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR182",
+          "displayName": "IPRIOR182",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B6",
+          "absoluteAddress": "0xE000E4B6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR183",
+          "displayName": "IPRIOR183",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B7",
+          "absoluteAddress": "0xE000E4B7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR184",
+          "displayName": "IPRIOR184",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B8",
+          "absoluteAddress": "0xE000E4B8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR185",
+          "displayName": "IPRIOR185",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04B9",
+          "absoluteAddress": "0xE000E4B9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR186",
+          "displayName": "IPRIOR186",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BA",
+          "absoluteAddress": "0xE000E4BA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR187",
+          "displayName": "IPRIOR187",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BB",
+          "absoluteAddress": "0xE000E4BB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR188",
+          "displayName": "IPRIOR188",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BC",
+          "absoluteAddress": "0xE000E4BC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR189",
+          "displayName": "IPRIOR189",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BD",
+          "absoluteAddress": "0xE000E4BD",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR190",
+          "displayName": "IPRIOR190",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BE",
+          "absoluteAddress": "0xE000E4BE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR191",
+          "displayName": "IPRIOR191",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04BF",
+          "absoluteAddress": "0xE000E4BF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR192",
+          "displayName": "IPRIOR192",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C0",
+          "absoluteAddress": "0xE000E4C0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR193",
+          "displayName": "IPRIOR193",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C1",
+          "absoluteAddress": "0xE000E4C1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR194",
+          "displayName": "IPRIOR194",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C2",
+          "absoluteAddress": "0xE000E4C2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR195",
+          "displayName": "IPRIOR195",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C3",
+          "absoluteAddress": "0xE000E4C3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR196",
+          "displayName": "IPRIOR196",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C4",
+          "absoluteAddress": "0xE000E4C4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR197",
+          "displayName": "IPRIOR197",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C5",
+          "absoluteAddress": "0xE000E4C5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR198",
+          "displayName": "IPRIOR198",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C6",
+          "absoluteAddress": "0xE000E4C6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR199",
+          "displayName": "IPRIOR199",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C7",
+          "absoluteAddress": "0xE000E4C7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR200",
+          "displayName": "IPRIOR200",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C8",
+          "absoluteAddress": "0xE000E4C8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR201",
+          "displayName": "IPRIOR201",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04C9",
+          "absoluteAddress": "0xE000E4C9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR202",
+          "displayName": "IPRIOR202",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CA",
+          "absoluteAddress": "0xE000E4CA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR203",
+          "displayName": "IPRIOR203",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CB",
+          "absoluteAddress": "0xE000E4CB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR204",
+          "displayName": "IPRIOR204",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CC",
+          "absoluteAddress": "0xE000E4CC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR205",
+          "displayName": "IPRIOR205",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CD",
+          "absoluteAddress": "0xE000E4CD",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR206",
+          "displayName": "IPRIOR206",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CE",
+          "absoluteAddress": "0xE000E4CE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR207",
+          "displayName": "IPRIOR207",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04CF",
+          "absoluteAddress": "0xE000E4CF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR208",
+          "displayName": "IPRIOR208",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D0",
+          "absoluteAddress": "0xE000E4D0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR209",
+          "displayName": "IPRIOR209",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D1",
+          "absoluteAddress": "0xE000E4D1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR210",
+          "displayName": "IPRIOR210",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D2",
+          "absoluteAddress": "0xE000E4D2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR211",
+          "displayName": "IPRIOR211",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D3",
+          "absoluteAddress": "0xE000E4D3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR212",
+          "displayName": "IPRIOR212",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D4",
+          "absoluteAddress": "0xE000E4D4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR213",
+          "displayName": "IPRIOR213",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D5",
+          "absoluteAddress": "0xE000E4D5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR214",
+          "displayName": "IPRIOR214",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D6",
+          "absoluteAddress": "0xE000E4D6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR215",
+          "displayName": "IPRIOR215",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D7",
+          "absoluteAddress": "0xE000E4D7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR216",
+          "displayName": "IPRIOR26",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D8",
+          "absoluteAddress": "0xE000E4D8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR217",
+          "displayName": "IPRIOR27",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04D9",
+          "absoluteAddress": "0xE000E4D9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR218",
+          "displayName": "IPRIOR28",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DA",
+          "absoluteAddress": "0xE000E4DA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR219",
+          "displayName": "IPRIOR29",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DB",
+          "absoluteAddress": "0xE000E4DB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR220",
+          "displayName": "IPRIOR220",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DC",
+          "absoluteAddress": "0xE000E4DC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR221",
+          "displayName": "IPRIOR221",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DD",
+          "absoluteAddress": "0xE000E4DD",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR222",
+          "displayName": "IPRIOR222",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DE",
+          "absoluteAddress": "0xE000E4DE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR223",
+          "displayName": "IPRIOR223",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04DF",
+          "absoluteAddress": "0xE000E4DF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR224",
+          "displayName": "IPRIOR224",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E0",
+          "absoluteAddress": "0xE000E4E0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR225",
+          "displayName": "IPRIOR225",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E1",
+          "absoluteAddress": "0xE000E4E1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR226",
+          "displayName": "IPRIOR226",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E2",
+          "absoluteAddress": "0xE000E4E2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR227",
+          "displayName": "IPRIOR227",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E3",
+          "absoluteAddress": "0xE000E4E3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR228",
+          "displayName": "IPRIOR228",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E4",
+          "absoluteAddress": "0xE000E4E4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR229",
+          "displayName": "IPRIOR229",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E5",
+          "absoluteAddress": "0xE000E4E5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR230",
+          "displayName": "IPRIOR230",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E6",
+          "absoluteAddress": "0xE000E4E6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR231",
+          "displayName": "IPRIOR231",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E7",
+          "absoluteAddress": "0xE000E4E7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR232",
+          "displayName": "IPRIOR232",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E8",
+          "absoluteAddress": "0xE000E4E8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR233",
+          "displayName": "IPRIOR233",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04E9",
+          "absoluteAddress": "0xE000E4E9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR234",
+          "displayName": "IPRIOR234",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04EA",
+          "absoluteAddress": "0xE000E4EA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR235",
+          "displayName": "IPRIOR235",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04EB",
+          "absoluteAddress": "0xE000E4EB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR236",
+          "displayName": "IPRIOR236",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04EC",
+          "absoluteAddress": "0xE000E4EC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR237",
+          "displayName": "IPRIOR237",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04ED",
+          "absoluteAddress": "0xE000E4ED",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR238",
+          "displayName": "IPRIOR238",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04EE",
+          "absoluteAddress": "0xE000E4EE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR239",
+          "displayName": "IPRIOR239",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04EF",
+          "absoluteAddress": "0xE000E4EF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR240",
+          "displayName": "IPRIOR240",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F0",
+          "absoluteAddress": "0xE000E4F0",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR241",
+          "displayName": "IPRIOR241",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F1",
+          "absoluteAddress": "0xE000E4F1",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR242",
+          "displayName": "IPRIOR242",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F2",
+          "absoluteAddress": "0xE000E4F2",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR243",
+          "displayName": "IPRIOR243",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F3",
+          "absoluteAddress": "0xE000E4F3",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR244",
+          "displayName": "IPRIOR244",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F4",
+          "absoluteAddress": "0xE000E4F4",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR245",
+          "displayName": "IPRIOR245",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F5",
+          "absoluteAddress": "0xE000E4F5",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR246",
+          "displayName": "IPRIOR246",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F6",
+          "absoluteAddress": "0xE000E4F6",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR247",
+          "displayName": "IPRIOR247",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F7",
+          "absoluteAddress": "0xE000E4F7",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR248",
+          "displayName": "IPRIOR248",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F8",
+          "absoluteAddress": "0xE000E4F8",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR249",
+          "displayName": "IPRIOR249",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04F9",
+          "absoluteAddress": "0xE000E4F9",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR250",
+          "displayName": "IPRIOR250",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FA",
+          "absoluteAddress": "0xE000E4FA",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR251",
+          "displayName": "IPRIOR251",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FB",
+          "absoluteAddress": "0xE000E4FB",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR252",
+          "displayName": "IPRIOR252",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FC",
+          "absoluteAddress": "0xE000E4FC",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR253",
+          "displayName": "IPRIOR253",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FD",
+          "absoluteAddress": "0xE000E4FD",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR254",
+          "displayName": "IPRIOR254",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FE",
+          "absoluteAddress": "0xE000E4FE",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "IPRIOR255",
+          "displayName": "IPRIOR255",
+          "description": "Interrupt Priority Register",
+          "addressOffset": "0x04FF",
+          "absoluteAddress": "0xE000E4FF",
+          "size": 8,
+          "access": "read-write",
+          "resetValue": "0x0"
+        },
+        {
+          "name": "SCTLR",
+          "displayName": "SCTLR",
+          "description": "System Control Register",
+          "addressOffset": "0x0D10",
+          "absoluteAddress": "0xE000ED10",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "SLEEPONEXIT",
+              "description": "SLEEPONEXIT",
+              "offset": 1,
+              "width": 1
+            },
+            {
+              "name": "SLEEPDEEP",
+              "description": "SLEEPDEEP",
+              "offset": 2,
+              "width": 1
+            },
+            {
+              "name": "WFITOWFE",
+              "description": "WFITOWFE",
+              "offset": 3,
+              "width": 1
+            },
+            {
+              "name": "SEVONPEND",
+              "description": "SEVONPEND",
+              "offset": 4,
+              "width": 1
+            },
+            {
+              "name": "SETEVENT",
+              "description": "SETEVENT",
+              "offset": 5,
+              "width": 1
+            },
+            {
+              "name": "SYSRESET",
+              "description": "SYSRESET",
+              "offset": 31,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "STK_CTLR",
+          "displayName": "STK_CTLR",
+          "description": "System counter control register",
+          "addressOffset": "0x1000",
+          "absoluteAddress": "0xE000F000",
+          "size": 32,
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "STE",
+              "description": "System counter enable",
+              "offset": 0,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "STIE",
+              "description": "System counter interrupt enable",
+              "offset": 1,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "STCLK",
+              "description": "System selects the clock source",
+              "offset": 2,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "STRE",
+              "description": "System reload register",
+              "offset": 3,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "MODE",
+              "description": "System Mode",
+              "offset": 4,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "INIT",
+              "description": "System Initialization update",
+              "offset": 5,
+              "width": 1,
+              "access": "read-write"
+            },
+            {
+              "name": "SWIE",
+              "description": "System software triggered interrupts enable",
+              "offset": 31,
+              "width": 1,
+              "access": "read-write"
+            }
+          ]
+        },
+        {
+          "name": "STK_SR",
+          "description": "System START",
+          "addressOffset": "0x1004",
+          "absoluteAddress": "0xE000F004",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNTIF",
+              "description": "CNTIF",
+              "offset": 0,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "name": "STK_CNTL",
+          "description": "System counter low register",
+          "addressOffset": "0x1008",
+          "absoluteAddress": "0xE000F008",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNTL",
+              "description": "CNTL",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "STK_CNTH",
+          "description": "System counter high register",
+          "addressOffset": "0x100C",
+          "absoluteAddress": "0xE000F00C",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CNTH",
+              "description": "CNTH",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "STK_CMPLR",
+          "description": "System compare low register",
+          "addressOffset": "0x1010",
+          "absoluteAddress": "0xE000F010",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CMPL",
+              "description": "CMPL",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        },
+        {
+          "name": "STK_CMPHR",
+          "description": "System compare high register",
+          "addressOffset": "0x1014",
+          "absoluteAddress": "0xE000F014",
+          "size": 32,
+          "access": "read-write",
+          "resetValue": "0x0",
+          "fields": [
+            {
+              "name": "CMPH",
+              "description": "CMPH",
+              "offset": 0,
+              "width": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
